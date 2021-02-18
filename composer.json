@@ -7,7 +7,6 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
-<<<<<<< HEAD
         "composer/package-versions-deprecated": "1.11.99.1",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.2",
@@ -52,15 +51,6 @@
         "symfony/stopwatch": "^5.2",
         "symfony/var-dumper": "^5.2",
         "symfony/web-profiler-bundle": "^5.2"
-=======
-        "symfony/console": "5.2.*",
-        "symfony/dotenv": "5.2.*",
-        "symfony/flex": "^1.3.1",
-        "symfony/framework-bundle": "5.2.*",
-        "symfony/yaml": "5.2.*"
-    },
-    "require-dev": {
->>>>>>> 72ee84c043dd591ff1ec2159254a5822e1926c0f
     },
     "config": {
         "optimize-autoloader": true,
