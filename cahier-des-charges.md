@@ -2,19 +2,19 @@
 
 - répartition des tâches :
     * François :
-        * 
+        * espace admin
         * 
         * 
     * Matthieu :
-        * 
+        * formulaires
         * 
         * 
     * Melvin :
-        * 
+        * page de produit
         * 
         * 
     * Wassim :
-        * 
+        * page d'accueil
         * 
         * 
 
