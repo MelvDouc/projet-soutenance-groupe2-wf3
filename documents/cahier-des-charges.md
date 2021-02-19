@@ -51,3 +51,4 @@
     * Vente additionnelle
     * Notifications diverses par mail (inscription newsletter, rappel de panier non vide)
     * Gestion des cookies
+    * (Plan d'accès 1 magasin)
