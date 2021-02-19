@@ -3,8 +3,9 @@
 
 ### Technologies utilisées:
 - Symfony
+- PHP pur (orienté objet)
 - HTML
 - CSS
 - JavaScript
-- Bootstrap
+- Bootstrap, Bootswatch
 - ...
