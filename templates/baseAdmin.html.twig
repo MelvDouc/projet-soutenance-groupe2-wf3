@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="site de vente de materiel sportif">
+        <meta name="author" content="">
+
+        <title>Projet WF3 - {% block title %}{% endblock %}</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('css/styleAdmin.css') }}">
+
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+    <body>
+        
+        <div class="bg-dark text-center p-3">
+            <h2>Projet WF3 - Admin</h2>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-2 bg-secondary text-center menu">
+                    <ul>
+                        <li><a href="{{ path('admin') }}"><i class="fas fa-laptop"></i> - Admin</a></li>
+                        <li><a href="{{ path('admin_produits') }}"><i class="fas fa-home"></i> - Produits</a></li>
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
+                            <li><a href="{{ path('admin_utilisateurs') }}"><i class="fas fa-users"></i> - Utilisateurs</a></li>
+                        {% endif %}
+                        <li><a href="{{ path('home') }}"><i class="fas fa-door-open"></i> - Quitter Admin</a></li>
+                        {# <li><a href="{{ path('app_logout') }}"><i class="fas fa-user-times"></i> - Déconnexion</a></li> #}
+                    </ul>
+                </nav>
+                <div class="col-10 p-5">
+                    {% for label, messages in app.flashes(['success', 'danger']) %}
+                        {% for message in messages %}
+                            <div class="flash-{{ label }} bg-{{ label }} text-light p-3 mb-3 rounded">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                    {% block body %}
+                        {# les informations et formulaires seront affichés ici... #}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+        {% block javascripts %}{% endblock %}
+
+        <footer class="container-fluid bg-dark text-center text-light">
+            <p>{{ copyright|raw }} - using <a href="https://symfony.com/">Synfony</a></p>
+        </footer>
+    </body>
+</html>
