@@ -1,0 +1,106 @@
+# decathlon.fr
+
+<promo> lien </promo>
+
+<nav>
+recherche
+question | magasin | compte | panier
+</nav>
+
+<header>slider automatique : articles phare (liens)</header>
+
+<div> Produits en solde </div>
+
+<main>
+    Produits en tout genre
+    Services+ : appli, coachs en ligne
+    e-carte cadeau
+</main>
+
+<footer>
+
+# go-sport.com
+
+<nav> menu | recherche || magasin proche | compote | panier </nav>
+
+<div> offre spéciale </div>
+
+<header> slider auto : produits phare </header>
+
+<main>
+à la une
+solde
+catégories sports
+catégories marques
+catégories âges
+services+
+</main>
+
+<footer>
+
+# jdsports.fr
+
+<div> mon compte | trouver magasin | favoris </div>
+
+<div> recherche | panier </div>
+
+<nav> catégories </nav>
+
+<main> 
+slider : soldes
+offres diverses
+nouveautés
+marques
+coups de coeur
+Instagram
+newsletter
+services+
+</main>
+
+<footer>
+
+# zalando.fr/sport
+
+<div> offre spéciale </div>
+
+<header> catégories | recherche </header>
+
+<main>
+options de recherche
+grid : produits phares
+</main>
+
+<footer>
+
+# https://www.intersport.fr/
+
+<nav> catégories || recherche || connexion | panier </nav>
+
+<div> offre spéciale </div>
+
+<header> Soldes </header>
+
+# ELEMENTS PRINCIPAUX
+
+- comptes utilisateurs --> rôles
+ * clients
+ * admin
+- types de produits
+ * normaux
+ * en solde
+- catégories
+ * différents sports
+ * sexe et âge
+- pages produit
+ * infos produits
+ * options de commande
+ * commentaires clients
+- panier
+- espace admin
+ * tableau READ des produits
+ * gestion BDD
+ * gestion des commentaires
+- formulaires
+ * inscription
+ * connexion
+ * admin (ajout / mise à jour d'un produit)

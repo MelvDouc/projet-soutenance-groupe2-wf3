@@ -1,0 +1,21 @@
+
+h2{
+    color: white;
+}
+
+a, a:link, a:visited{
+    color: white;
+}
+
+a:hover{
+    color: lightgray
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+}
+
+li{
+    list-style: none;
+}
