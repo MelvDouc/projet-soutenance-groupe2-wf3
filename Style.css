@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#head{
+    background-color: rgb(58, 57, 55);
+    height: 80px;
+}
+#head .logo h1{
+    margin-left: 150px;
+    color: beige;
+    line-height: 80px;
+}
+#head .flex{
+    display: flex;
+}
+#head .recherche{
+    margin-left: 150px;
+}
+#head .recherche input{
+    width: 600px;
+    margin-top: 20px;
+}
+#head .mini-nav{
+    margin-left: 150px;
+}
+#head .mini-nav i{
+    color: beige;
+    font-size: 35px;
+    margin-left: 25px;
+    line-height: 80px;
+}
+#nav{
+    margin-top: 20px;
+}
+#nav ul{
+    text-align: center;
+    list-style: none;
+}
+#nav ul li.homme-li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#nav ul li.homme-li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#nav ul li.femme-li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#nav ul li.enfant-li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#nav ul li.accessoire-li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#nav ul li.homme-li:hover{
+    color: cornflowerblue;
+}
+#nav ul li.femme-li:hover{
+    color: cornflowerblue;
+}
+#nav ul li.enfant-li:hover{
+    color: cornflowerblue;
+}
+#nav ul li.accessoire-li:hover{
+    color: cornflowerblue;
+}
+#home .homme-image img{
+    float: left;
+    width: 49.9%;
+}
+#home .femme-image img{
+    float: left;
+    width: 49.9%;
+    height: 454px;
+}
