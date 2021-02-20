@@ -1,3 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %} produit #{{ produit.id }} {% endblock %}
+
+{% block body %}
+
+    <h1>{{ produit.nom }}</h1>
+
+    <img src="{{ produit.image }}" alt="">
+
+    <p>{{ produit.description }}</p>
+
+    <p>Prix&thinsp;: {{ produit.prix }}</p>
+
+{% endblock %}
