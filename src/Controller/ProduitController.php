@@ -23,6 +23,17 @@ class ProduitController extends AbstractController
     }
 
     /**
+     * @Route("/produit-{id}", name="voir_produit")
+     */
+    public function voir($id) {
+        $produit = $this->getDoctrine()->getRepository(Produits::class)->find($id);
+
+        return $this->render('produit/produit.html.twig', [
+            'produit' => $produit
+        ]);
+    }
+
+    /**
      * @Route("/admin/produits", name="admin_produits")
      */
     public function indexAdmin(ProduitsRepository $produitsRepository): Response

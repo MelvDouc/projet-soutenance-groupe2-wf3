@@ -1,0 +1,7 @@
+99b14f,::1,GET,http://localhost:8000/,1613657863,,404
+3731e5,::1,GET,http://localhost:8000/,1613755128,,200
+ac87a8,::1,GET,http://localhost:8000/,1613835507,,200
+62d762,::1,GET,http://localhost:8000/produit-1,1613835530,527ee1,500
+527ee1,::1,GET,http://localhost:8000/produit-1,1613835530,,500
+f7de59,::1,GET,http://localhost:8000/produit-1,1613835570,e5bb05,500
+e5bb05,::1,GET,http://localhost:8000/produit-1,1613835570,,500
