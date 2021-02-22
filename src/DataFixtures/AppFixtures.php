@@ -10,14 +10,14 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        for($count = 0; $count < 10; $count++) {
+        for($count = 1; $count <= 20; $count++) {
             $produit = new Produits();
             $produit->setNom('produit n° '.$count);
             $produit->setDescription('Description du produit #'.$count);
-            $produit->setImage(($count % 2 == 0) ? 'homme.jpg' : 'femme.jpg');
-            $produit->setPrix(random_int(1,200).'€');
-            $produit->setIdCategorie('1');
-            $produit->setIdTailles('1');
+            $produit->setImg(($count % 2 == 0) ? 'homme.jpg' : 'femme.jpg');
+            $produit->setPrix(number_format(random_int(1,200)));
+
+            $manager->persist($produit);
         }
 
         $manager->flush();
