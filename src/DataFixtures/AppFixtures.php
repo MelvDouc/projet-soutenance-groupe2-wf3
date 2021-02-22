@@ -10,7 +10,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        for($count = 0; $count < 10; $count++) {
+        for($count = 1; $count <= 20; $count++) {
             $produit = new Produits();
             $produit->setNom('produit n° '.$count);
             $produit->setDescription('Description du produit #'.$count);
