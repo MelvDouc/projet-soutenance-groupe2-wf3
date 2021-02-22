@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Taille;
+use App\Entity\Tailles;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Taille|null find($id, $lockMode = null, $lockVersion = null)
- * @method Taille|null findOneBy(array $criteria, array $orderBy = null)
- * @method Taille[]    findAll()
- * @method Taille[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tailles|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tailles|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tailles[]    findAll()
+ * @method Tailles[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TailleRepository extends ServiceEntityRepository
+class TaillesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Taille::class);
+        parent::__construct($registry, Tailles::class);
     }
 
     // /**
-    //  * @return Taille[] Returns an array of Taille objects
+    //  * @return Tailles[] Returns an array of Tailles objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class TailleRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Taille
+    public function findOneBySomeField($value): ?Tailles
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.exampleField = :val')
