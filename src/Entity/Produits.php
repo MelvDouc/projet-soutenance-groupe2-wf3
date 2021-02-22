@@ -45,7 +45,7 @@ class Produits
     /**
      * @ORM\Column(type="integer")
      */
-    private $id_tailler;
+    private $id_tailles;
 
     /**
      * @ORM\Column(type="integer")
@@ -122,14 +122,14 @@ class Produits
         return $this;
     }
 
-    public function getIdTailler(): ?int
+    public function getIdTailles(): ?int
     {
-        return $this->id_tailler;
+        return $this->id_tailles;
     }
 
-    public function setIdTailler(int $id_tailler): self
+    public function setIdTailles(int $id_tailles): self
     {
-        $this->id_tailler = $id_tailler;
+        $this->id_tailles = $id_tailles;
 
         return $this;
     }
