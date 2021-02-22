@@ -39,8 +39,94 @@ class ProduitController extends AbstractController
     public function indexAdmin(ProduitsRepository $produitsRepository): Response
     {
         $produits = $produitsRepository->findAll();
-        return $this->render('admin/produit.html.twig', [
+        return $this->render('admin/produits.html.twig', [
             'produits' => $produits,
         ]);
     }
+
+    /**
+     * @Route("/admin/produits/update-{id}", name="produit_update")
+     */
+    public function updateProduit(ProduitsRepository $produitsRepository, $id, Request $request)
+    {
+        $produit = $produitsRepository->find($id);
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $oldNomImg = $produit->getImg();
+            $oldCheminImg = $this->getParameter('dossier_photos_produits') . '/' . $oldNomImg;
+            if ($oldNomImg != null) {
+                unlink($oldCheminImg);
+            }
+            $infoImg = $form['img']->getData();
+            $extensionImg = $infoImg->guessExtension();
+            $nomImg = time() . '.' . $extensionImg;
+            $infoImg->move($this->getParameter('dossier_photos_produits'), $nomImg);
+            $produit->setImg($nomImg);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($produit);
+            $manager->flush();
+            $this->addFlash(
+                'success',
+                'Le produit a bien été modifié'
+            );
+            return $this->redirectToRoute('admin_produits');
+        }
+        return $this->render('admin/produitForm.html.twig', [
+            'produitForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/admin/produits/delete-{id}", name="produit_delete")
+     */
+    public function deleteProduit(ProduitsRepository $produitsRepository, $id)
+    {
+        $produit = $produitsRepository->find($id);
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($produit);
+        $manager->flush();
+        $this->addFlash(
+            'success',
+            'Le produit a bien été supprimé'
+        );
+        return $this->redirectToRoute('admin_produits');
+    }
+
+    /**
+     * @Route("/admin/produits/create", name="produit_create")
+     */
+    public function createproduit(Request $request)
+    {
+        $produit = new Produits();
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_produits'), $nomImg); // déplace l'image
+                $produit->setImg($nomImg);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($produit);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'Le produit a bien été ajouté.'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'ajout de la produit'
+                );
+            }
+            return $this->redirectToRoute('admin_produits');
+        }
+        return $this->render('admin/produitForm.html.twig', [
+            'produitForm' => $form->createView()
+        ]);
+        
+    }
+
 }

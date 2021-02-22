@@ -4,7 +4,8 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    app.copyright: 'Copyright &copy; 2021 - [insérer les noms]'
+    dossier_photos_produits: '%kernel.project_dir%/public/img/produit'
+    app.copyright: 'Copyright &copy; 2021 - François BANITZ, Matthieu SCHERER, Melvin DOUCET, Wassim KASSEM'
 services:
     # default configuration for services in *this* file
     _defaults:
