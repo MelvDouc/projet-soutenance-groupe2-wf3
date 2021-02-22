@@ -43,4 +43,55 @@ class ProduitController extends AbstractController
             'produits' => $produits,
         ]);
     }
+
+    /**
+     * @Route("/admin/produits/update-{id}", name="produit_update")
+     */
+    public function updateProduit(ProduitsRepository $produitsRepository, $id, Request $request)
+    {
+        $produit = $produitsRepository->find($id);
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $oldNomImg = $produit->getImg();
+            $oldCheminImg = $this->getParameter('dossier_photos_produits') . '/' . $oldNomImg;
+            if ($oldNomImg != null) {
+                unlink($oldCheminImg);
+            }
+            $infoImg = $form['img']->getData();
+            $extensionImg = $infoImg->guessExtension();
+            $nomImg = time() . '.' . $extensionImg;
+            $infoImg->move($this->getParameter('dossier_photos_produits'), $nomImg);
+            $produit->setImg($nomImg);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($produit);
+            $manager->flush();
+            $this->addFlash(
+                'success',
+                'Le produit a bien été modifié'
+            );
+            return $this->redirectToRoute('admin_produits');
+        }
+        return $this->render('admin/produitForm.html.twig', [
+            'produitForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/admin/produits/delete-{id}", name="produit_delete")
+     */
+    public function deleteProduit(ProduitsRepository $produitsRepository, $id)
+    {
+        $produit = $produitsRepository->find($id);
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($produit);
+        $manager->flush();
+        $this->addFlash(
+            'success',
+            'Le produit a bien été supprimé'
+        );
+        return $this->redirectToRoute('admin_produits');
+    }
+
+
 }
