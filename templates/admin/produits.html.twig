@@ -23,21 +23,19 @@
                 <td class="align-middle">{{ loop.index }}</td>
                 <td class="align-middle">{{ produit.nom }}</td>
                 <td class="align-middle">{{ produit.description|u.truncate(75, '[...]') }}</td>
-                <td class="align-middle"><img src="{{ asset('img/produit/') ~ produit.image }}" alt="photo {{ produit.nom }}"></td>
+                <td class="align-middle"><img src="{{ asset('img/produit/') ~ produit.img }}" alt="photo {{ produit.nom }}"></td>
                 <td class="align-middle">{{ produit.prix }} €</td>               
                     <td class="align-middle">
-                        <a href="{{ path('produit_update', {'id':produit.id}) }}"><i class="fas fa-pen-square"></i>modifier</a> | 
-                        <a href="{{ path('produit_delete', {'id':produit.id}) }}"><i class="fas fa-trash-alt"></i>supprimer</a>
+                        <a href="{{ path('produit_update', {'id':produit.id}) }}"><i class="fas fa-pen-square"></i></a> | 
+                        <a href="{{ path('produit_delete', {'id':produit.id}) }}"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
         {% endfor %}
     </tbody>
 </table>
 
-{#
 <div class="text-right">
     <a href="{{ path('produit_create') }}" class="btn btn-outline-dark">Ajouter un produit</a>
 </div>   
-#}
 
 {% endblock %}
