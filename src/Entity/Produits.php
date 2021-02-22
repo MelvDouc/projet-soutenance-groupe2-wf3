@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProduitsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,19 +20,19 @@ class Produits
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $img;
 
     /**
      * @ORM\Column(type="float")
@@ -38,24 +40,20 @@ class Produits
     private $prix;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToMany(targetEntity=Categories::class)
      */
     private $id_categorie;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToMany(targetEntity=Tailles::class)
      */
     private $id_tailles;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $categories_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $taille_id;
+    public function __construct()
+    {
+        $this->id_categorie = new ArrayCollection();
+        $this->id_tailles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,14 +84,14 @@ class Produits
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImg(): ?string
     {
-        return $this->image;
+        return $this->img;
     }
 
-    public function setImage(string $image): self
+    public function setImg(string $img): self
     {
-        $this->image = $image;
+        $this->img = $img;
 
         return $this;
     }
@@ -110,51 +108,52 @@ class Produits
         return $this;
     }
 
-    public function getIdCategorie(): ?int
+    /**
+     * @return Collection|Categories[]
+     */
+    public function getIdCategorie(): Collection
     {
         return $this->id_categorie;
     }
 
-    public function setIdCategorie(int $id_categorie): self
+    public function addIdCategorie(Categories $idCategorie): self
     {
-        $this->id_categorie = $id_categorie;
+        if (!$this->id_categorie->contains($idCategorie)) {
+            $this->id_categorie[] = $idCategorie;
+        }
 
         return $this;
     }
 
-    public function getIdTailles(): ?int
+    public function removeIdCategorie(Categories $idCategorie): self
+    {
+        $this->id_categorie->removeElement($idCategorie);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tailles[]
+     */
+    public function getIdTailles(): Collection
     {
         return $this->id_tailles;
     }
 
-    public function setIdTailles(int $id_tailles): self
+    public function addIdTaille(Tailles $idTaille): self
     {
-        $this->id_tailles = $id_tailles;
+        if (!$this->id_tailles->contains($idTaille)) {
+            $this->id_tailles[] = $idTaille;
+        }
 
         return $this;
     }
 
-    public function getCategoriesId(): ?int
+    public function removeIdTaille(Tailles $idTaille): self
     {
-        return $this->categories_id;
-    }
-
-    public function setCategoriesId(int $categories_id): self
-    {
-        $this->categories_id = $categories_id;
+        $this->id_tailles->removeElement($idTaille);
 
         return $this;
     }
 
-    public function getTailleId(): ?int
-    {
-        return $this->taille_id;
-    }
-
-    public function setTailleId(int $taille_id): self
-    {
-        $this->taille_id = $taille_id;
-
-        return $this;
-    }
 }

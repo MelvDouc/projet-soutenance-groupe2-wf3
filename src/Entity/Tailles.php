@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\TailleRepository;
+use App\Repository\TaillesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TailleRepository::class)
+ * @ORM\Entity(repositoryClass=TaillesRepository::class)
  */
-class Taille
+class Tailles
 {
     /**
      * @ORM\Id
@@ -18,7 +18,7 @@ class Taille
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     private $nom;
 
