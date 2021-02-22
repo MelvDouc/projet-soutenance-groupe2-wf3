@@ -18,6 +18,8 @@ class AppFixtures extends Fixture
             $produit->setPrix(random_int(1,200).'€');
             $produit->setIdCategorie('1');
             $produit->setIdTailles('1');
+
+            $manager->persist($produit);
         }
 
         $manager->flush();
