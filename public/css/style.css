@@ -12,6 +12,7 @@
     margin-left: 150px;
     color: beige;
     line-height: 80px;
+    cursor: pointer;
 }
 #head .flex{
     display: flex;
@@ -24,7 +25,8 @@
     margin-top: 20px;
 }
 #head .mini-nav{
-    margin-left: 150px;
+    margin-left: 100px;
+    cursor: pointer;
 }
 #head .mini-nav i{
     color: beige;
@@ -81,12 +83,62 @@
 #nav ul li.accessoire-li:hover{
     color: cornflowerblue;
 }
-#home .homme-image img{
+
+/* .homme-image {
     float: left;
     width: 49.9%;
+    height: 40px;
+}  */
+
+footer {
+    margin-top: 100px;
+    background-color: rgb(58, 57, 55);
+    color: beige;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
 }
-#home .femme-image img{
-    float: left;
-    width: 49.9%;
-    height: 454px;
+
+footer .social-media {
+    display: flex;
+}
+
+footer .social-media p {
+    margin-right: 15px;
+    border: 1px solid beige;
+    border-radius: 100%;
+    padding: 5px;
+    text-align: center;
+    width: 35px;
+    cursor: pointer;
+}
+
+.main {
+    margin: 20px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards .card {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.cards .card img {
+    width: 350px;
+}
+
+.cards .card .card-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

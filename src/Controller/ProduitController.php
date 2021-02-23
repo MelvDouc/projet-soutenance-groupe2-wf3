@@ -93,5 +93,40 @@ class ProduitController extends AbstractController
         return $this->redirectToRoute('admin_produits');
     }
 
+    /**
+     * @Route("/admin/produits/create", name="produit_create")
+     */
+    public function createproduit(Request $request)
+    {
+        $produit = new Produits();
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_produits'), $nomImg); // déplace l'image
+                $produit->setImg($nomImg);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($produit);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'Le produit a bien été ajouté.'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'ajout de la produit'
+                );
+            }
+            return $this->redirectToRoute('admin_produits');
+        }
+        return $this->render('admin/produitForm.html.twig', [
+            'produitForm' => $form->createView()
+        ]);
+        
+    }
 
 }

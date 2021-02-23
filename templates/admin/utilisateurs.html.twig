@@ -1,20 +1,39 @@
 {% extends 'baseAdmin.html.twig' %}
 
-{% block title %}Hello UtilisateursController!{% endblock %}
+{% block title %}Utilisateurs{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<h2>Liste des utilisateurs</h2>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/WF3/PHP/Symphony/projet-soutenance-groupe2-wf3/src/Controller/UtilisateursController.php'|file_link(0) }}">src/Controller/UtilisateursController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/WF3/PHP/Symphony/projet-soutenance-groupe2-wf3/templates/utilisateurs/index.html.twig'|file_link(0) }}">templates/utilisateurs/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <table class="table table-bordered table-hover table-sm table-dark table-striped text-center">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.roles|join(' + ')|lower }}</td>
+                    <td class="align-middle">
+                        <a href="{{ path('user_update', {'id':user.id}) }}"><i class="fas fa-pen-square"></i></a> | 
+                        <a href="{{ path('user_delete', {'id':user.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{#
+    <div class="text-right">
+        <a href="{{ path('user_create') }}" class="btn btn-outline-dark">Ajouter un utilisateur</a>
+    </div>
+#}
+
 {% endblock %}

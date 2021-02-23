@@ -1,0 +1,40 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Produit - formulaire{% endblock title %}
+
+{% block body %}
+
+
+    {{ form_start(produitForm) }}
+        <h2 class="pb-5">Formulaire - Produit</h2>
+
+        <div class="col-4 my-3">
+            {{ form_label(produitForm.nom) }}
+            {{ form_widget(produitForm.nom) }}
+        </div>
+        
+        <div class="col-12 my-3">
+            {{ form_label(produitForm.description) }}
+            {{ form_widget(produitForm.description) }}
+        </div>
+
+        <div class="col-4 my-3">
+            {{ form_label(produitForm.img) }}
+            {{ form_widget(produitForm.img) }}
+            {{ form_help(produitForm.img) }}
+        </div>
+        
+        <div class="col-3 my-3">
+            {{ form_label(produitForm.prix ) }}
+            {{ form_widget(produitForm.prix ) }}
+        </div>
+        
+        <div class="text-right">
+            <a href="{{ path('admin_produits') }}" class="btn btn-outline-light text-dark">Retour</a> 
+            {{ form_widget(produitForm.valider )}}
+        </div>
+
+
+    {{ form_end(produitForm) }}
+
+{% endblock %}

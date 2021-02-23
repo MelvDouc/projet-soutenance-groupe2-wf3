@@ -7,7 +7,11 @@ a, a:link, a:visited{
     color: white;
 }
 
-a:hover{
+a.btn, a.btn:link, a.btn:visited{
+    color: initial;
+}
+
+a:hover a.btn:hover{
     color: lightgray
 }
 
@@ -18,4 +22,9 @@ footer{
 
 li{
     list-style: none;
+}
+
+table img{
+    max-width: 150px;
+    max-height: 150px;
 }
