@@ -36,6 +36,16 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pseudo;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date_inscription;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -115,5 +125,29 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo(string $pseudo): self
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    public function getDateInscription(): ?\DateTimeInterface
+    {
+        return $this->date_inscription;
+    }
+
+    public function setDateInscription(\DateTimeInterface $date_inscription): self
+    {
+        $this->date_inscription = $date_inscription;
+
+        return $this;
     }
 }
