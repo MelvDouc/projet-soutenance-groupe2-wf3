@@ -4,18 +4,19 @@
     * François :
         * espace admin
         * inscription & connexion utilisateurs
-        * 
+        * formulaire ajout catégorie
+        * CRUD de toutes les tables
     * Matthieu :
         * formulaires
         * notifications par mail
-        * 
+        * mise à jour de la BDD
     * Melvin :
         * page de produit
-        * 
+        * aspect visuel avec Wassim
         * 
     * Wassim :
         * page d'accueil
-        * 
+        * aspect visuel avec Melvin
         * 
 
 
