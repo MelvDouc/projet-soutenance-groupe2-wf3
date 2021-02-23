@@ -8,29 +8,28 @@
     background-color: rgb(58, 57, 55);
     height: 5rem;
 }
-#head .logo h1{
-    margin-left: 150px;
+
+#head .logo h1 {
     color: beige;
-    line-height: 80px;
+    cursor: pointer;
+    margin: 0;
+}
+
+#head .recherche input {
+    width: 600px;
+}
+
+#head .mini-nav {
     cursor: pointer;
 }
 
-#head .recherche{
-    margin-left: 150px;
-}
-#head .recherche input{
-    width: 600px;
-    margin-top: 20px;
-}
-#head .mini-nav{
-    margin-left: 100px;
-    cursor: pointer;
-}
 #head .mini-nav i{
     color: beige;
-    font-size: 35px;
-    margin-left: 25px;
-    line-height: 80px;
+    font-size: 2.25rem;
+}
+
+#head .mini-nav i+i {
+    margin-left: 1.5rem;
 }
 
 /* #nav{
