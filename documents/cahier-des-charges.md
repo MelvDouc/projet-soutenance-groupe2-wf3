@@ -7,7 +7,7 @@
         * 
     * Matthieu :
         * formulaires
-        * 
+        * notifications par mail
         * 
     * Melvin :
         * page de produit
