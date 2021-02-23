@@ -147,6 +147,10 @@ footer .social-media p {
     margin-bottom: 1.5em;
 }
 
+#accueil-categories .col-12 {
+    padding: 0;
+}
+
 #accueil-categories .col-6 {
     display: flex;
     flex-direction: column;
@@ -161,4 +165,9 @@ footer .social-media p {
 
 #accueil-categories img {
     width: 40vw;
+}
+
+.bg-gray1 {
+    background: rgb(194,194,194);
+    background: linear-gradient(235deg, rgba(194,194,194,1) 50%, rgba(210,210,210,1) 100%);
 }
