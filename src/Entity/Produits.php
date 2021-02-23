@@ -40,20 +40,16 @@ class Produits
     private $prix;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Categories::class)
+     * @ORM\ManyToOne(targetEntity=Categories::class, inversedBy="produits")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $id_categorie;
+    private $id_categories;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Tailles::class)
+     * @ORM\ManyToOne(targetEntity=SousCategories::class, inversedBy="produits")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $id_tailles;
-
-    public function __construct()
-    {
-        $this->id_categorie = new ArrayCollection();
-        $this->id_tailles = new ArrayCollection();
-    }
+    private $id_sous_categories;
 
     public function getId(): ?int
     {
@@ -108,50 +104,26 @@ class Produits
         return $this;
     }
 
-    /**
-     * @return Collection|Categories[]
-     */
-    public function getIdCategorie(): Collection
+    public function getIdCategories(): ?Categories
     {
-        return $this->id_categorie;
+        return $this->id_categories;
     }
 
-    public function addIdCategorie(Categories $idCategorie): self
+    public function setIdCategories(?Categories $id_categories): self
     {
-        if (!$this->id_categorie->contains($idCategorie)) {
-            $this->id_categorie[] = $idCategorie;
-        }
+        $this->id_categories = $id_categories;
 
         return $this;
     }
 
-    public function removeIdCategorie(Categories $idCategorie): self
+    public function getIdSousCategories(): ?SousCategories
     {
-        $this->id_categorie->removeElement($idCategorie);
-
-        return $this;
+        return $this->id_sous_categories;
     }
 
-    /**
-     * @return Collection|Tailles[]
-     */
-    public function getIdTailles(): Collection
+    public function setIdSousCategories(?SousCategories $id_sous_categories): self
     {
-        return $this->id_tailles;
-    }
-
-    public function addIdTaille(Tailles $idTaille): self
-    {
-        if (!$this->id_tailles->contains($idTaille)) {
-            $this->id_tailles[] = $idTaille;
-        }
-
-        return $this;
-    }
-
-    public function removeIdTaille(Tailles $idTaille): self
-    {
-        $this->id_tailles->removeElement($idTaille);
+        $this->id_sous_categories = $id_sous_categories;
 
         return $this;
     }

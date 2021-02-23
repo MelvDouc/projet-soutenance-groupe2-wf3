@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoriesRepository;
+use App\Repository\SousCategoriesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CategoriesRepository::class)
+ * @ORM\Entity(repositoryClass=SousCategoriesRepository::class)
  */
-class Categories
+class SousCategories
 {
     /**
      * @ORM\Id
@@ -25,7 +25,7 @@ class Categories
     private $nom;
 
     /**
-     * @ORM\OneToMany(targetEntity=Produits::class, mappedBy="id_categories", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Produits::class, mappedBy="id_sous_categories", orphanRemoval=true)
      */
     private $produits;
 
@@ -63,7 +63,7 @@ class Categories
     {
         if (!$this->produits->contains($produit)) {
             $this->produits[] = $produit;
-            $produit->setIdCategories($this);
+            $produit->setIdSousCategories($this);
         }
 
         return $this;
@@ -73,12 +73,12 @@ class Categories
     {
         if ($this->produits->removeElement($produit)) {
             // set the owning side to null (unless already changed)
-            if ($produit->getIdCategories() === $this) {
-                $produit->setIdCategories(null);
+            if ($produit->getIdSousCategories() === $this) {
+                $produit->setIdSousCategories(null);
             }
         }
 
         return $this;
     }
-    
+
 }
