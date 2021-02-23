@@ -84,12 +84,6 @@
     color: cornflowerblue;
 }
 
-/* .homme-image {
-    float: left;
-    width: 49.9%;
-    height: 40px;
-}  */
-
 footer {
     margin-top: 100px;
     background-color: rgb(58, 57, 55);
@@ -141,4 +135,8 @@ footer .social-media p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
+} 
+
+/* #home .homme-image {
+    width: 100%;
+} */
