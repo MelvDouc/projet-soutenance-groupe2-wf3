@@ -43,7 +43,7 @@
 
 
 
-        <div class="col-10 p-5">
+        <div class="col-10 p-5 mx-auto">
             {% for label, messages in app.flashes(['success', 'danger']) %}
                 {% for message in messages %}
                     <div class="flash-{{ label }} bg-{{ label }} text-light p-3 mb-3 rounded">
