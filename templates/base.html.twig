@@ -20,26 +20,7 @@
     </head>
 
     <body>
-        <header>
-            <section id="head">
-                <div class="flex">
-                    <div class="logo"><h1>PS</h1></div>
-                    <div class="recherche"><input type="text" class="form-control" placeholder="Recherche"></div>
-                    <div class="mini-nav"><i class="far fa-user"></i><i class="far fa-heart"></i><i class="fa fa-shopping-bag"></i></div>
-                </div>
-            </section>
-    
-            <section id="nav">
-                <div class="barre">
-                    <ul>
-                        <li class="homme-li">Homme</li>
-                        <li class="femme-li">Femme</li>
-                        <li class="enfant-li">Enfant</li>
-                        <li class="accessoire-li">Accessoires</li>
-                    </ul>
-                </div>
-            </section>
-        </header>
+        {% include 'inc/header.inc.html.twig' %}
 
 
 
@@ -62,15 +43,7 @@
         
         {% block javascripts %}{% endblock %}
 
-        <footer>
-            <p>&copy; Contactez-nous au 07 88 89 90 91</p>
-            <div class="social-media">
-                <p><i class="fab fa-facebook-f"></i></p>
-                <p><i class="fab fa-twitter"></i></p>
-                <p><i class="fab fa-instagram"></i></p>
-                <p><i class="fab fa-linkedin-in"></i></p>
-            </div>
-        </footer>
+        {% include 'inc/footer.inc.html.twig' %}
     </body>
 
 </html>
