@@ -140,3 +140,25 @@ footer .social-media p {
 /* #home .homme-image {
     width: 100%;
 } */
+
+/*  */
+
+#accueil-categories .row {
+    margin-bottom: 1.5em;
+}
+
+#accueil-categories .col-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#accueil-categories a {
+    margin-bottom: .85em;
+}
+
+#accueil-categories img {
+    width: 40vw;
+}
