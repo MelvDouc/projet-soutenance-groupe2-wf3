@@ -3,7 +3,7 @@
 - répartition des tâches :
     * François :
         * espace admin
-        * 
+        * inscription & connexion utilisateurs
         * 
     * Matthieu :
         * formulaires
