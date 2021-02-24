@@ -9,19 +9,35 @@ use Faker;
 
 class CategoriesFixtures extends Fixture
 {
+    public const CATEGORIES = null;
+
     public function load(ObjectManager $manager)
     
     {
 
-        $faker = Faker\Factory::create('fr_FR');
+            $categories = [
+                1 => [
+                    'nom' => 'Football'
+                ],
+                2=> [
+                    'nom' => 'Basketball'
+                ],
+                3 => [
+                    'nom' => 'Volleyball'
+                ],
+                4 => [
+                    'nom' => 'Handball'
+                ]
+            ];
 
-        for($count = 0; $count < 10; $count++) {
-            $categorie = new Categories();
-            $categorie->setNom('nom de la catégorie');
-            $categorie->setCouleur($faker->colorName . "\n");
+            foreach($categories as $key => $value) {
+                $categorie = new Categories();
+                $categorie->setNom($value['nom']);
+                // $this->setReference(self::CATEGORIES, $categorie);
+                $manager->persist($categorie);
 
-            $manager->persist($categorie);
-        }
+                $this->addReference('categorie_' . $key, $categorie);
+            }
 
         $manager->flush();
     }
