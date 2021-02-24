@@ -15,6 +15,7 @@
             <th>Image</th>
             <th>Prix</th>
             <th>Catégorie</th>
+            <th>Sous Catégorie</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -25,8 +26,9 @@
                 <td class="align-middle">{{ produit.nom }}</td>
                 <td class="align-middle">{{ produit.description|u.truncate(75, '[...]') }}</td>
                 <td class="align-middle"><img src="{{ asset('img/produit/') ~ produit.img }}" alt="photo {{ produit.nom }}"></td>
-                <td class="align-middle">{{ produit.prix }} €</td>               
-                <td class="align-middle">{{ produit.categories.nom }}</td>
+                <td class="align-middle">{{ produit.prix }} €</td>
+                <td class="align-middle">{{ produit.idCategories.nom }}</td>
+                <td class="align-middle">{{ produit.idSousCategories.nom }}</td>
                 <td class="align-middle">
                     <a href="{{ path('produit_update', {'id':produit.id}) }}"><i class="fas fa-pen-square"></i></a> | 
                     <a href="{{ path('produit_delete', {'id':produit.id}) }}"><i class="fas fa-trash-alt"></i></a>
