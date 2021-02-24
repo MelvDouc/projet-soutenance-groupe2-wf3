@@ -6,18 +6,22 @@
         * inscription & connexion utilisateurs
         * formulaire ajout catégorie
         * CRUD de toutes les tables
+        * CRUD des utilisateurs
+        * CRUD des produits
     * Matthieu :
         * formulaires
         * notifications par mail
         * mise à jour de la BDD
+        * contrôleurs catégories et sous-catégories
     * Melvin :
         * page de produit
+        * style de page produit
         * aspect visuel avec Wassim
         * 
     * Wassim :
         * page d'accueil
         * aspect visuel avec Melvin
-        * 
+        * header et footer
 
 
 - rôle du site : e-commerce (vente d'articles de sport en ligne)
