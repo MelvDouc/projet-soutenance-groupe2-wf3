@@ -14,7 +14,7 @@
         * mise à jour de la BDD
         * contrôleurs catégories et sous-catégories
     * Melvin :
-        * page de produit
+        * page de produit (modèle, contrôleur et vue)
         * style de page produit
         * aspect visuel avec Wassim
         * 
