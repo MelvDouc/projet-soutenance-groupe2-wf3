@@ -43,7 +43,7 @@ class UtilisateursController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
-            return $this->redirectToRoute('admin_users');
+            return $this->redirectToRoute('admin_utilisateurs');
        }
         return $this->render('admin/userForm.html.twig', [
             'userForm' => $form->createView()
@@ -70,7 +70,7 @@ class UtilisateursController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
-            return $this->redirectToRoute('admin_users');
+            return $this->redirectToRoute('admin_utilisateurs');
         }
         return $this->render('admin/userForm.html.twig', [
             'userForm' => $form->createView()
@@ -86,6 +86,6 @@ class UtilisateursController extends AbstractController
         $manager = $this->getDoctrine()->getManager();
         $manager->remove($user);
         $manager->flush();
-        return $this->redirectToRoute('admin_users');
+        return $this->redirectToRoute('admin_utilisateurs');
     }
 }
