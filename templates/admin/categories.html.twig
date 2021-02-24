@@ -1,0 +1,61 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}
+
+<h2 class="pb-5">Liste des catégories</h2>
+
+<table class="table table-bordered table-hover table-sm table-dark table-striped text-center">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td class="align-middle">{{ loop.index }}</td>
+                <td class="align-middle">{{ categorie.nom }}</td>
+                <td class="align-middle">
+                    <a href="{{ path('categorie_update', {'id':categorie.id}) }}"><i class="fas fa-pen-square"></i></a> | 
+                    <a href="{{ path('categorie_delete', {'id':categorie.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="text-right">
+    <a href="{{ path('categorie_create') }}" class="btn btn-outline-dark">Ajouter une catégorie</a>
+</div>   
+
+<h2 class="pb-5">Liste des sous-catégories</h2>
+
+<table class="table table-bordered table-hover table-sm table-dark table-striped text-center">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sousCategorie in sousCategories %}
+            <tr>
+                <td class="align-middle">{{ loop.index }}</td>
+                <td class="align-middle">{{ sousCategorie.nom }}</td>
+                <td class="align-middle">
+                    <a href="{{ path('sous_categorie_update', {'id':sousCategorie.id}) }}"><i class="fas fa-pen-square"></i></a> | 
+                    <a href="{{ path('sous_categorie_delete', {'id':sousCategorie.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="text-right">
+    <a href="{{ path('sous_categorie_create') }}" class="btn btn-outline-dark">Ajouter une sous-catégorie</a>
+</div>   
+
+{% endblock %}

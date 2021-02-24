@@ -11,17 +11,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SousCategoriesController extends AbstractController
 {
     /**
-     * @Route("/admin/sous-categories", name="admin_sous_categories")
-     */
-    public function index(SousCategoriesRepository $souscategoriesRepository): Response
-    {
-        $sousCategorie = $souscategoriesRepository->findAll();
-        return $this->render('sous_categories/index.html.twig', [
-            'sousCategorie' => $SousCategories
-        ]);
-    }
-
-    /**
      * @Route("/admin/sous-categorie/create", name="sous_categorie_create")
      */
     public function createSousCategorie(Request $request)
