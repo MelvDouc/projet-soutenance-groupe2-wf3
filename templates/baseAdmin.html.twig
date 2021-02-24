@@ -33,6 +33,11 @@
                             <a href="{{ path('admin_produits') }}">
                                 <i class="fas fa-futbol"></i> - Produits
                             </a>
+                        </li>                        
+                        <li>
+                            <a href="{{ path('categories') }}">
+                                <i class="fas fa-align-left"></i> - Catégories
+                            </a>
                         </li>
                         {% if is_granted('ROLE_SUPER_ADMIN') %}
                             <li>
