@@ -3,8 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Produits;
+use App\Entity\Categories;
+use App\Entity\SousCategories;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -29,6 +32,18 @@ class ProduitType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Ex.: Un ballon de football en mousse parfait pour l\'apprentissage...'
                 ]
+            ])
+            ->add('id_categories', EntityType::class, [
+                'class' => Categories::class,
+                'choice_label' => 'nom',
+                'label' => 'Catégorie',
+                'required' => true,
+            ])
+            ->add('id_sous_categories', EntityType::class, [
+                'class' => SousCategories::class,
+                'choice_label' => 'nom',
+                'label' => 'Sous Catégorie',
+                'required' => true,
             ])
             ->add('img', FileType::class, [
                 'help' => 'png, jpg ou jpeg - 1 Mo maximum',
