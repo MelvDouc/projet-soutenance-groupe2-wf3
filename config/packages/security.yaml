@@ -1,7 +1,5 @@
 security:
     encoders:
-        App\Entity\Utilisateurs:
-            algorithm: auto
         App\Entity\User:
             algorithm: auto
 

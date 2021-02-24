@@ -12,15 +12,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class UtilisateursController extends AbstractController
+class UsersController extends AbstractController
 {
     /**
-     * @Route("/admin/utilisateurs", name="admin_utilisateurs")
+     * @Route("/admin/users", name="admin_users")
      */
     public function index(UserRepository $userRepository): Response
     {
         $users = $userRepository->findAll();
-        return $this->render('admin/utilisateurs.html.twig', [
+        return $this->render('admin/users.html.twig', [
             'users' => $users,
         ]);
     }

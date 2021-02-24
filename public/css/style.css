@@ -4,85 +4,62 @@
     box-sizing: border-box;
 }
 
-#head{
+#head {
     background-color: rgb(58, 57, 55);
-    height: 80px;
+    height: 5rem;
 }
-#head .logo h1{
-    margin-left: 150px;
+
+#head .logo h1 {
     color: beige;
-    line-height: 80px;
     cursor: pointer;
+    margin: 0;
 }
-#head .flex{
-    display: flex;
-}
-#head .recherche{
-    margin-left: 150px;
-}
-#head .recherche input{
+
+#head .recherche input {
     width: 600px;
-    margin-top: 20px;
 }
 #head .mini-nav{
     margin-left: 50px;
     cursor: pointer;
 }
+
 #head .mini-nav i{
     color: beige;
     font-size: 25px;
     margin-left: 30px;
     line-height: 80px;
 }
-#nav{
+
+#head .mini-nav i+i {
+    margin-left: 1.5rem;
+}
+
+/* #nav{
     margin-top: 20px;
-}
-#nav ul{
+} */
+
+nav ul {
     text-align: center;
-    list-style: none;
+    list-style-type: none;
 }
-#nav ul li.homme-li{
-    text-transform: uppercase;
+
+.nav-item {
     display: inline-block;
     margin-left: 20px;
     cursor: pointer;
 }
-#nav ul li.homme-li{
+
+.nav-link {
     text-transform: uppercase;
-    display: inline-block;
-    margin-left: 20px;
-    cursor: pointer;
+    color: #000;
+    padding: 1rem;
 }
-#nav ul li.femme-li{
-    text-transform: uppercase;
-    display: inline-block;
-    margin-left: 20px;
-    cursor: pointer;
-}
-#nav ul li.enfant-li{
-    text-transform: uppercase;
-    display: inline-block;
-    margin-left: 20px;
-    cursor: pointer;
-}
-#nav ul li.accessoire-li{
-    text-transform: uppercase;
-    display: inline-block;
-    margin-left: 20px;
-    cursor: pointer;
-}
-#nav ul li.homme-li:hover{
+
+.nav-link:hover {
     color: cornflowerblue;
 }
-#nav ul li.femme-li:hover{
-    color: cornflowerblue;
-}
-#nav ul li.enfant-li:hover{
-    color: cornflowerblue;
-}
-#nav ul li.accessoire-li:hover{
-    color: cornflowerblue;
-}
+
+/*  */
 
 footer {
     margin-top: 100px;
@@ -163,6 +140,10 @@ footer .social-media p {
 
 #accueil-categories img {
     width: 40vw;
+}
+
+#accueil-categories img:hover {
+    filter: opacity(.9);
 }
 
 .bg-gray1 {
