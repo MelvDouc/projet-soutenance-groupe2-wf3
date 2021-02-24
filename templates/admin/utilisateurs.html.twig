@@ -10,8 +10,10 @@
         <thead>
             <tr>
                 <th>N°</th>
+                <th>Pseudo</th>
                 <th>Email</th>
                 <th>Rôle</th>
+                <th>Date inscription</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,8 +21,10 @@
             {% for user in users %}
                 <tr>
                     <td>{{ loop.index }}</td>
+                    <td>{{ user.pseudo }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.roles|join(' + ')|lower }}</td>
+                    <td>{{ user.dateInscription|date('d/m/Y') }}</td>
                     <td class="align-middle">
                         <a href="{{ path('user_update', {'id':user.id}) }}"><i class="fas fa-pen-square"></i></a> | 
                         <a href="{{ path('user_delete', {'id':user.id}) }}"><i class="fas fa-trash-alt"></i></a>
@@ -30,10 +34,10 @@
         </tbody>
     </table>
 
-{#
+
     <div class="text-right">
         <a href="{{ path('user_create') }}" class="btn btn-outline-dark">Ajouter un utilisateur</a>
     </div>
-#}
+
 
 {% endblock %}

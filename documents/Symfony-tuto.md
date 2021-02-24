@@ -255,3 +255,84 @@ php bin/console make:form
 ```
 - créer le controller associé
 - afficher le formulaire dans une page / vue
+- créer le template de mail (contact/emailContact.html.twig)
+- désactiver l'envoi de mail (config/packages/swiftmailer.yaml) :
+```
+swiftmailer:
+    disable_delivery: true
+```
+- choisir les adresses des destinataires pendant les tests (config/packages/swiftmailer.yaml) :
+```
+swiftmailer:
+    delivery_addresses: ['david.hurtrel@gmail.com', ...]
+```
+- voir les mails dans la toolbar (config/packages/dev/web_profiler.yaml) :
+```
+intercept_redirect: true
+```
+(un message apparaît ensuite dans la toolbar)
+
+## PAGES D'ERREUR
+
+- si nécessaire :
+```
+composer require symfony/twig-pack
+```
+- 1xx : information
+- 2xx : succès
+- 3xx : redirection
+- 4xx : client web
+    - 401 : accès refusé
+    - 403 : interdit
+    - 404 : non trouvé
+- 5xx : serveur
+    - 500 : erreur interne
+    - 503 : service indisponible
+
+- créer l'arborescence templates/bundles/TwigBundle/Exception
+- y créer les fichiers d'erreur avec l'écriture error404.html.twig
+- error.html.twig pour les autres erreurs
+- tester l'erreur 404 : taper une url non existante
+- tester l'erreur 500 : {% {% extends 'base.html.twig' %} %} dans error404.html.twig puis taper une ur non existante
+
+## TRADUCTIONS
+
+- si nécessaire :
+```
+composer require symfony/translation
+```
+- config/packages/translation.yaml :
+```
+default_locale: fr
+translator:
+    ...
+    fallbacks:
+        - fr
+```
+- config/services.yaml :
+```
+parameters:
+    ...
+    app.langues: 'fr, en, de, nl'
+```
+- config/packages/twig.yaml :
+```
+globals:
+    ...
+    langues: [fr, en, de, nl]
+```
+- templates :
+```
+{% trans %} {% endtrans %}
+```
+- LangueController.php : enregistrer la langue en session
+- LocaleSubscriber.php : enregistrer la langue en session
+- base.html.twig : liens
+- voir les messages à traduire :
+```
+php bin/console translation:update --dump-messages fr
+```
+- générer les fichiers de traduction :
+```
+php bin/console translation:update --force fr
+```
