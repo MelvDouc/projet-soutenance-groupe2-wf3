@@ -22,8 +22,6 @@
     <body>
         {% include 'inc/header.inc.html.twig' %}
 
-
-
         <div class="col-10 p-5 mx-auto">
             {% for label, messages in app.flashes(['success', 'danger']) %}
                 {% for message in messages %}
