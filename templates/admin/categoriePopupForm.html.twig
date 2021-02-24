@@ -1,0 +1,25 @@
+{% extends 'basePopup.html.twig' %}
+
+{% block title %}Catégorie - formulaire{% endblock title %}
+
+{% block body %}
+<h3>Ajouter une catégorie</h2>
+
+{{ form_start(categorieForm) }}
+{{ form_label(categorieForm.nom) }}
+<div class="row">
+  <div class="col-8">
+    {{ form_widget(categorieForm.nom) }}
+  </div>
+  
+  <div class="col-4">
+    {{ form_widget(categorieForm.valider )}}
+  </div>
+
+
+
+</div>
+
+{{ form_end(categorieForm) }}
+
+{% endblock %}

@@ -58,6 +58,36 @@ class CategoriesController extends AbstractController
         
     }
 
+    
+    /**
+     * @Route("/admin/categorie/create/popup", name="categorie_create_popup")
+     */
+    public function createCategoriePopup(Request $request)
+    {
+        $categorie = new Categories();
+        $form = $this->createForm(CategorieType::class, $categorie);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($categorie);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'Le categorie a bien été ajouté.'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'ajout de la categorie'
+                );
+            }
+        }
+        return $this->render('admin/categoriePopupForm.html.twig', [
+            'categorieForm' => $form->createView()
+        ]);
+    }
+
     /**
      * @Route("/admin/categorie/update-{id}", name="categorie_update")
      */
