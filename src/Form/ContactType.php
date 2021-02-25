@@ -80,7 +80,7 @@ class ContactType extends AbstractType
                 'help' => '2000 caractères maximum'
             ])
             ->add('fichier', FileType::class, [
-                'help' => 'png, jpg, jpeg ou pdf - 1 Mo Max',
+                'label' => 'png, jpg, jpeg ou pdf - 1 Mo Max',
                 'mapped' => false,
                 'required' => false,
                 'label' => 'Insérez votre fichier'
