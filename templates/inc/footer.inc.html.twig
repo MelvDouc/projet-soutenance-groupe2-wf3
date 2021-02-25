@@ -1,6 +1,6 @@
-<footer>
+<footer class="mt-auto p-4 bg-dark text-light d-flex justify-content-around">
     <div>
-        <p><a href="/contact" class="text-light text-decoration-none">Service client <i class="fas fa-headset"></i></a></p>
+        <p><a href="{{ path('contact') }}" class="text-light text-decoration-none">Service client <i class="fas fa-headset"></i></a></p>
         <p>Livraison rapide <i class="fas fa-shipping-fast"></i></p>
         <p>Retour gratuit sous 30 jours <i class="fas fa-undo"></i></p>
         <p>Paiement sécurisé <i class="fas fa-shield-alt"></i></p>
@@ -13,12 +13,47 @@
         <p>Politique de confidentialité et en matière de cookies</p> 
     </div>
 
+    <div class="routes">
+        <h3 class="text-uppercase">Plan du site</h3>
+        <ul>
+            <li>
+                <a href="{{ path('home') }}">Accueil</a>
+            </li>
+            <li>
+                <a href="{{ path('contact') }}">Contact</a>
+            </li>
+            <li>
+                <a href="{{ path('app_login') }}">Connexion</a>
+            </li>
+            <li>
+                <a href="{{ path('app_register') }}">Inscription</a>
+            </li>
+            <li>
+                <a href="{{ path('admin') }}">Espace admin</a>
+            </li>
+        </ul>
+    </div>
+
     <div class="social-media">
-        <p><i class="fab fa-facebook-f"></i></p>
-        <p><i class="fab fa-twitter"></i></p>
-        <p><i class="fab fa-instagram"></i></p>
-        <p><i class="fab fa-linkedin-in"></i></p>
-        <p><i class="fab fa-youtube"></i></p>
-        <p><i class="fas fa-map-marked-alt"></i></p>
+        <ul>
+            <li>
+                <i class="fab fa-facebook-f"></i>
+            </li>
+            <li>
+                <i class="fab fa-twitter"></i>
+            </li>
+            <li>
+                <i class="fab fa-instagram"></i>
+            </li>
+            <li>
+                <i class="fab fa-linkedin-in"></i>
+            </li>
+            <li>
+                <i class="fab fa-youtube"></i>
+            </li>
+            <li>
+                <i class="fas fa-map-marked-alt"></i>
+            </li>
+        </ul>
     </div>
 </footer>

@@ -61,16 +61,6 @@ nav ul {
 
 /*  */
 
-footer {
-    margin-top: 100px;
-    background-color: rgb(58, 57, 55);
-    color: beige;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 30px;
-}
-
 footer .social-media {
     display: flex;
 }
