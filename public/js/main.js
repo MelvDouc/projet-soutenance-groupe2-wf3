@@ -9,4 +9,5 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     equalizeHeights(footerCol4Uls);
+    window.addEventListener('resize', equalizeHeights(footerCol4Uls))
 })

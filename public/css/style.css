@@ -1,64 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
 }
 
-#head {
-    background-color: rgb(58, 57, 55);
-    height: 5rem;
-}
-
-#head .logo h1 {
-    color: beige;
-    cursor: pointer;
+html, body {
+    padding: 0;
     margin: 0;
 }
 
-#head .recherche input {
-    width: 600px;
-}
-#head .mini-nav{
-    margin-left: 50px;
-    cursor: pointer;
+/*  */
+/*  */
+
+#head .row > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#head .mini-nav i{
-    color: beige;
-    font-size: 25px;
-    margin-left: 30px;
-    line-height: 80px;
-}
-
-#head .mini-nav i+i {
-    margin-left: 1.5rem;
-}
-
-/* #nav{
-    margin-top: 20px;
-} */
+/*  */
+/*  */
 
 nav ul {
     text-align: center;
     list-style-type: none;
+    padding: 0;
 }
 
-.nav-item {
+nav li {
     display: inline-block;
     margin-left: 20px;
     cursor: pointer;
+    transition: background-color .25s;
 }
 
-.nav-link {
+nav li:hover {
+    background-color: cornflowerblue;
+}
+
+nav a {
     text-transform: uppercase;
     color: #000;
     padding: 1rem;
 }
 
-.nav-link:hover {
-    color: cornflowerblue;
+nav a:hover {
+    color: white;
 }
 
 /*  */
