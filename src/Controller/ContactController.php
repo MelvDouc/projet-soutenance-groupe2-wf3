@@ -31,10 +31,12 @@ class ContactController extends AbstractController
                             'motif' => $contact['motif'],
                             'numerodecommande' => $contact['numerodecommande'],
                             'description' => $contact['description'],
+                            'fichier' => $contact['fichier'],
                         ],
                     ),
                     'text/html'
                 )
+                ->attach(\Swift_Attachment::fromPath('public/img'))
             ;
             $mailer->send($mail);
             $this->addFlash(
