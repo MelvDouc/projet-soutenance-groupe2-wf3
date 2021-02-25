@@ -15,11 +15,17 @@
             </div>
             <div class="col-3">
                 <div class="fs-2" id="icons">
-                    <a href="{{ path('app_login') }}" title="Se connecter">
-                        <i class="bi bi-box-arrow-right"></i>
+                    <a href="{{ path('app_login') }}" title="Connexion">
+                        <i class="bi bi-box-arrow-in-right"></i>
                     </a>
                     <a href="" title="Mon compte">
                         <i class="bi bi-person"></i>
+                    </a>
+                    <a href="" title="Mon panier">
+                        <i class="bi bi-bag"></i>
+                    </a>
+                    <a href="" title="Déconnexion">
+                        <i class="bi bi-box-arrow-left"></i>
                     </a>
                 </div>
             </div>
@@ -30,7 +36,7 @@
     <nav>
         <div class="col-6 mx-auto">
             <ul class="p-0 m-0 d-flex justify-content-between align-items-center">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="" class="nav-link">Football</a>
                 </li>
                 <li class="nav-item">
@@ -41,7 +47,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">Volleyball</a>
-                </li>
+                </li> -->
+                {% for cat in categories %}
+                    <li class="nav-item">
+                        <a href="" class="nav-link">{{ cat.nom }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </nav>

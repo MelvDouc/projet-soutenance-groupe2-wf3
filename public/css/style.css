@@ -13,9 +13,13 @@ html, body {
 /*  */
 /*  */
 
-#head a, #head a:hover {
+#head a {
     text-decoration: none;
     color: #fff;
+}
+
+#head a:hover {
+    color: gold;
 }
 
 #head .row > div {
