@@ -1,0 +1,20 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Catégorie - formulaire{% endblock title %}
+
+{% block body %}
+
+{{ form_start(sousCategorieForm) }}
+<div class="col-4 my-3">
+  {{ form_label(sousCategorieForm.nom) }}
+</div>
+
+
+<div class="text-right">
+  <a href="{{ path('admin_categories') }}" class="btn btn-outline-light text-dark">Retour</a> 
+  {{ form_widget(sousCategorieForm.valider )}}
+</div>
+
+{{ form_end(sousCategorieForm) }}
+
+{% endblock %}

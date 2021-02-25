@@ -42,7 +42,7 @@ class CategoriesController extends AbstractController
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'Le categorie a bien été ajouté.'
+                    'La categorie a bien été ajouté.'
                 );
             } else {
                 $this->addFlash(
@@ -71,7 +71,7 @@ class CategoriesController extends AbstractController
             $manager->flush();
             $this->addFlash(
                 'success',
-                'Le categorie a bien été modifiée'
+                'La categorie a bien été modifiée'
             );
             return $this->redirectToRoute('admin_categories');
         }
@@ -91,7 +91,7 @@ class CategoriesController extends AbstractController
         $manager->flush();
         $this->addFlash(
             'success',
-            'Le categorie a bien été supprimé'
+            'La catégorie a bien été supprimée'
         );
         return $this->redirectToRoute('admin_categories');
     }
