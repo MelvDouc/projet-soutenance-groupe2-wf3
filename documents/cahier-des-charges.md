@@ -17,7 +17,7 @@
         * page de produit (modèle, contrôleur et vue)
         * style de page produit
         * aspect visuel avec Wassim
-        * 
+        * style des formulaires
     * Wassim :
         * page d'accueil
         * aspect visuel avec Melvin
