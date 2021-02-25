@@ -1,4 +1,6 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -60,30 +62,32 @@ nav ul {
 }
 
 /*  */
+/*  */
 
 footer {
-    margin-top: 100px;
-    background-color: rgb(58, 57, 55);
-    color: beige;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 30px;
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
 }
 
-footer .social-media {
-    display: flex;
+footer ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-footer .social-media p {
-    margin-right: 15px;
-    /* border: 1px solid beige; */
-    /* border-radius: 100%; */
-    padding: 5px;
+footer li {
     text-align: center;
-    width: 35px;
+}
+
+footer li:hover, footer a:hover {
+    color: gold;
     cursor: pointer;
 }
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+/*  */
+/*  */
 
 .main {
     margin: 20px;

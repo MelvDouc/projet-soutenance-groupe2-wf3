@@ -1,24 +1,69 @@
-<footer>
-    <div>
-        <p><a href="/contact" class="text-light text-decoration-none">Service client <i class="fas fa-headset"></i></a></p>
-        <p>Livraison rapide <i class="fas fa-shipping-fast"></i></p>
-        <p>Retour gratuit sous 30 jours <i class="fas fa-undo"></i></p>
-        <p>Paiement sécurisé <i class="fas fa-shield-alt"></i></p>
+<footer class="mt-auto p-3 bg-dark text-light">
+    <div class="row mb-3 d-flex justify-content-around">
+        <div class="col-4">
+            <h3 class="text-center text-uppercase">Nos services</h3>
+            <ul>
+                <li>
+                    <a href="{{ path('contact') }}">Service client <i class="fas fa-headset"></i></a>
+                </li>
+                <li>Livraison rapide <i class="fas fa-shipping-fast"></i></li>
+                <li>Retour gratuit sous 30 jours <i class="fas fa-undo"></i></li>
+                <li>Paiement sécurisé <i class="fas fa-shield-alt"></i></li>
+            </ul>
+        </div>
+        <div class="col-4">
+             <h3 class="text-center text-uppercase">Informations</h3>
+            <ul>
+                <li>Qui sommes-nous ?</li>
+                <li>Conditions générales</li>        
+                <li>Mentions légales</li>     
+                <li>Politique de confidentialité et en matière de cookies</li>
+            </ul>
+        </div>
+        <div class="col-4" id="routes">
+            <h3 class="text-center text-uppercase">Plan du site</h3>
+            <ul>
+                <li>
+                    <a href="{{ path('home') }}">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ path('contact') }}">Contact</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_login') }}">Connexion</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_register') }}">Inscription</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin') }}">Espace admin</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <div class="copy">
-        <p>Qui sommes nous ?</p>
-        <p>Conditions générales</p>        
-        <p>Mentions légales</p>     
-        <p>Politique de confidentialité et en matière de cookies</p> 
-    </div>
-
-    <div class="social-media">
-        <p><i class="fab fa-facebook-f"></i></p>
-        <p><i class="fab fa-twitter"></i></p>
-        <p><i class="fab fa-instagram"></i></p>
-        <p><i class="fab fa-linkedin-in"></i></p>
-        <p><i class="fab fa-youtube"></i></p>
-        <p><i class="fas fa-map-marked-alt"></i></p>
+    <div class="row">
+        <div class="col-6 mx-auto" id="social-media">
+            <ul class="d-flex justify-content-around m-0 fs-2">
+                <li>
+                    <i class="fab fa-facebook-f"></i>
+                </li>
+                <li>
+                    <i class="fab fa-twitter"></i>
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fab fa-linkedin-in"></i>
+                </li>
+                <li>
+                    <i class="fab fa-youtube"></i>
+                </li>
+                <li>
+                    <i class="fas fa-map-marked-alt"></i>
+                </li>
+            </ul>
+        </div>
     </div>
 </footer>
