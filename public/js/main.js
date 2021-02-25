@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
-    const footerCol4Uls = document.querySelectorAll('footer .col-4 ul');
+    const footerCol4Uls = document.querySelectorAll('footer .col-4 ul'),
+        registrationFormPseudo = document.querySelector('#registration_form_pseudo');
 
     function equalizeHeights(elems) {
         let heights = [];
@@ -10,4 +11,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
     equalizeHeights(footerCol4Uls);
     window.addEventListener('resize', equalizeHeights(footerCol4Uls))
+
+    //
+
+    function generateRandomUsername() {
+        let randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+        let mythicalHeroes = ['Achille', 'Perseus', 'Ulysse', 'Hector', 'Jason', 'Heraklès'];
+        let num = randomInt(1, 99);
+        num = (num < 10) ? '0' + num : num;
+        let username = mythicalHeroes[randomInt(0, mythicalHeroes.length - 1)] + num;
+        return username;
+    }
+
+    registrationFormPseudo.setAttribute('placeholder', 'Exemple : ' + generateRandomUsername());
 })

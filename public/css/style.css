@@ -28,6 +28,16 @@ html, body {
     align-items: center;
 }
 
+#head h1 {
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: .115em .5em;
+}
+
+#head h1:hover {
+    border-color: gold;
+}
+
 #head .col-3 {
     padding: 0;
 }
