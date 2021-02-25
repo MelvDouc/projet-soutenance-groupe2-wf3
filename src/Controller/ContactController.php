@@ -36,7 +36,6 @@ class ContactController extends AbstractController
                     ),
                     'text/html'
                 )
-                ->attach(\Swift_Attachment::fromPath('public/img'))
             ;
             $mailer->send($mail);
             $this->addFlash(
