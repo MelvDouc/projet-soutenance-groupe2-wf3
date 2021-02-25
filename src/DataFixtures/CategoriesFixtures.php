@@ -17,16 +17,20 @@ class CategoriesFixtures extends Fixture
 
             $categories = [
                 1 => [
-                    'nom' => 'Football'
+                    'nom' => 'Football',
+                    'img' => 'img.img',
                 ],
                 2=> [
-                    'nom' => 'Basketball'
+                    'nom' => 'Basketball',
+                    'img' => 'img.img',
                 ],
                 3 => [
-                    'nom' => 'Volleyball'
+                    'nom' => 'Volleyball',
+                    'img' => 'img.img',
                 ],
                 4 => [
-                    'nom' => 'Handball'
+                    'nom' => 'Handball',
+                    'img' => 'img.img',
                 ]
             ];
 
