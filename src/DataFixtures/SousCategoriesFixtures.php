@@ -15,17 +15,21 @@ class SousCategoriesFixtures extends Fixture
     {
         $souscategories = [
             1 => [
-                'nom' => 'Ballons'
+                'nom' => 'Ballons',
+                'img' => 'img.img',
             ],
             2 => [
-                'nom' => 'Maillots'
+                'nom' => 'Maillots',
+                'img' => 'img.img',
             ],
             3 => [
-                'nom' => 'Chaussures'
+                'nom' => 'Chaussures',
+                'img' => 'img.img',
             ],
             4 => [
-                'nom' => 'Accessoires'
-            ]
+                'nom' => 'Accessoires',
+                'img' => 'img.img',
+                ]
         ];
 
         foreach($souscategories as $keytwo => $value) {
