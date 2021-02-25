@@ -29,6 +29,11 @@ class SousCategories
      */
     private $produits;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $img;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -77,6 +82,18 @@ class SousCategories
                 $produit->setIdSousCategories(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }
