@@ -27,7 +27,6 @@ html, body {
 
 nav ul {
     list-style-type: none;
-    padding: 0;
 }
 
 nav li {
@@ -113,10 +112,6 @@ footer a {
     justify-content: space-between;
 } 
 
-#home .homme-image {
-    width: 100%;
-}
-
 #accueil-categories .row {
     margin-bottom: 1.5em;
 }
@@ -144,6 +139,48 @@ footer a {
 #accueil-categories img:hover {
     filter: opacity(.9);
 }
+
+/*  */
+/*  */
+
+.page-container {
+    border: 1px solid #000;
+    border-radius: 5px 20px;
+    box-shadow: .25rem 0.75rem 0.75rem;
+    background-color: rgba(175, 175, 175, 0.475);
+}
+
+label[for="contact_fichier"] {
+    margin-bottom: .5em;
+}
+
+.page-container input[type="file"] {
+    display: none;
+}
+
+.custom-file-label::before {
+    content: "Parcourir";
+    border: 1px solid #000;
+    border-radius: 3px;
+    outline: none;
+    margin-right: .75em;
+    padding: .25em .5em;
+    white-space: nowrap;
+    background-color: #fff;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+}
+
+.required::after {
+    content: " *";
+    color: rgb(185, 30, 30);
+    font-size: large;
+}
+
+/*  */
+/*  */
 
 .bg-gray1 {
     background: rgb(194,194,194);
