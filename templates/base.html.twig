@@ -20,7 +20,7 @@
         
     </head>
 
-    <body class="col-12 mx-auto">
+    <body class="col-12 mx-auto d-flex flex-column min-vh-100">
         {% include 'inc/header.inc.html.twig' %}
 
         {% for label, messages in app.flashes(['success', 'danger']) %}
