@@ -18,18 +18,20 @@ html, body {
     align-items: center;
 }
 
+#head .col-3 {
+    padding: 0;
+}
+
 /*  */
 /*  */
 
 nav ul {
-    text-align: center;
     list-style-type: none;
     padding: 0;
 }
 
 nav li {
-    display: inline-block;
-    margin-left: 20px;
+    /* Ne pas mettre de marge ! Ça fausse le centrage. */
     cursor: pointer;
     transition: background-color .25s;
 }
