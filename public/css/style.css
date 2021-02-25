@@ -73,6 +73,12 @@ footer ul {
     padding: 0;
 }
 
+footer .col-4 ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 footer li {
     text-align: center;
 }

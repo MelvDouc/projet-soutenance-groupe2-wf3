@@ -1,10 +1,12 @@
-const h1s = document.getElementsByTagName('h1');
+window.addEventListener('DOMContentLoaded', function () {
+    const footerCol4Uls = document.querySelectorAll('footer .col-4 ul');
 
-function premiereLettreMajuscule(elem) {
-    if (elem != null) {
-        let str = elem.innerText;
-        elem.innerText = str.substring(0, 1).toUpperCase() + str.substring(1);
+    function equalizeHeights(elems) {
+        let heights = [];
+        let getHeight = elem => parseFloat(window.getComputedStyle(elem).height);
+        Object.values(elems).forEach(elem => heights.push(getHeight(elem)));
+        Object.values(elems).forEach(elem => elem.style.height = Math.max(...heights) + 'px');
     }
-}
 
-Object.values(h1s).forEach(h1 => premiereLettreMajuscule(h1));
+    equalizeHeights(footerCol4Uls);
+})
