@@ -81,11 +81,9 @@ class ContactType extends AbstractType
             ])
             ->add('fichier', FileType::class, [
                 'help' => 'png, jpg, jpeg ou pdf - 1 Mo Max',
+                'mapped' => false,
                 'required' => false,
-                'label' => 'Insérez votre fichier',
-                'attr' => [
-                    'placeholder' => 'fichier.jpg/jpeg/png ou pdf'
-                ]
+                'label' => 'Insérez votre fichier'
                 ])
             ->add('envoyer', SubmitType::class);
         ;

@@ -19,7 +19,13 @@ class ContactController extends AbstractController
         $formulaireContact->handleRequest($request);
         if ($formulaireContact->isSubmitted() && $formulaireContact->isValid()) {
             $contact = $formulaireContact->getData();
+            // téléchargement de l'image
+            $image = $formulaireContact->get('fichier')->getData();
+            $nomFichier = md5(uniqid()) . '.' . $image->guessExtension();
+            $image->move($this->getParameter('dossier_images_clients'), $nomFichier);
+            
             $mail = (new \Swift_Message('Projet Sport - demande de contact'))
+                ->attach(\Swift_Attachment::fromPath($_FILES['contact']['tmp_name']['fichier'])->setFilename($_FILES['contact']['name']['fichier']))
                 ->setFrom($contact['email'])
                 ->setTo('contact.elibird@gmail.com')
                 ->setBody(
@@ -31,12 +37,10 @@ class ContactController extends AbstractController
                             'motif' => $contact['motif'],
                             'numerodecommande' => $contact['numerodecommande'],
                             'description' => $contact['description'],
-                            'fichier' => $contact['fichier'],
                         ],
                     ),
                     'text/html'
                 )
-                ->attach(\Swift_Attachment::fromPath('public/img'))
             ;
             $mailer->send($mail);
             $this->addFlash(
