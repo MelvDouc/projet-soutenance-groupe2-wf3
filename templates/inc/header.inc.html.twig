@@ -1,38 +1,60 @@
-<header>
-    <section id="head">
-        <div class="flex">
-            <div class="logo"><h1>WBS</h1></div>
-            <div class="recherche"><input type="text" class="form-control" placeholder="Recherche"></div>
-            <div class="mini-nav"><i class="fas fa-globe-europe"></i><i class="far fa-user"></i><i class="far fa-heart"></i><i class="fa fa-shopping-bag"></i></div>
+<header class="mb-5">
+    <div class="p-3 bg-dark text-light" id="head">
+        <div class="row">
+            <div class="col-3">
+                <div id="brand">
+                    <a href="{{ path('home') }}" title="Page d'accueil">
+                        <h1 class="mb-0 fs-1">WF-Sport</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="w-100" id="search-bar">
+                    <input type="search" class="form-control w-100" placeholder="Recherche">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="fs-2" id="icons">
+                    <a href="{{ path('app_login') }}" title="Connexion">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                    </a>
+                    <a href="" title="Mon compte">
+                        <i class="bi bi-person"></i>
+                    </a>
+                    <a href="" title="Mon panier">
+                        <i class="bi bi-bag"></i>
+                    </a>
+                    <a href="" title="Déconnexion">
+                        <i class="bi bi-box-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <section id="nav">
-        <div class="barre">
-            <ul>
-                <li class="homme-li">Football</li>
-                <li class="femme-li">Basketball</li>
-                <li class="enfant-li">Volleyball</li>
-                <li class="accessoire-li">Handball</li>
+    </div>
+    
+    
+    <nav>
+        <div class="col-6 mx-auto">
+            <ul class="p-0 m-0 d-flex justify-content-between align-items-center">
+                <li class="nav-item">
+                    <a href="" class="nav-link">Football</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Basketball</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Handball</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Volleyball</a>
+                </li>
+                {# {% for cat in categories %}
+                    <li class="nav-item">
+                        <a href="" class="nav-link">{{ cat.nom }}</a>
+                    </li>
+                {% endfor %} #}
             </ul>
         </div>
-    </section>
-
-    <nav>
-        <ul>
-            <li class="nav-item">
-                <a href="" class="nav-link">Hommes</a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">Femmes</a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">Enfant</a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">Accessoires</a>
-            </li>
-        </ul>
     </nav>
 
 </header>

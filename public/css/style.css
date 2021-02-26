@@ -1,89 +1,107 @@
-*{
-    padding: 0;
-    margin: 0;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
     box-sizing: border-box;
 }
 
-#head {
-    background-color: rgb(58, 57, 55);
-    height: 5rem;
-}
-
-#head .logo h1 {
-    color: beige;
-    cursor: pointer;
+html, body {
+    padding: 0;
     margin: 0;
 }
 
-#head .recherche input {
-    width: 600px;
-}
-#head .mini-nav{
-    margin-left: 50px;
-    cursor: pointer;
-}
+/*  */
+/*  */
 
-#head .mini-nav i{
-    color: beige;
-    font-size: 25px;
-    margin-left: 30px;
-    line-height: 80px;
+#head a {
+    text-decoration: none;
+    color: #fff;
 }
 
-#head .mini-nav i+i {
-    margin-left: 1.5rem;
+#head a:hover {
+    color: gold;
 }
 
-/* #nav{
-    margin-top: 20px;
-} */
-
-nav ul {
-    text-align: center;
-    list-style-type: none;
+#head .row > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav-item {
-    display: inline-block;
-    margin-left: 20px;
-    cursor: pointer;
+#head h1 {
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: .115em .5em;
 }
 
-.nav-link {
-    text-transform: uppercase;
-    color: #000;
-    padding: 1rem;
+#head h1:hover {
+    border-color: gold;
 }
 
-.nav-link:hover {
-    color: cornflowerblue;
+#head .col-3 {
+    padding: 0;
 }
 
 /*  */
+/*  */
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    /* Ne pas mettre de marge ! Ça fausse le centrage. */
+    cursor: pointer;
+    transition: background-color .25s;
+}
+
+nav li:hover {
+    background-color: cornflowerblue;
+}
+
+nav a {
+    text-transform: uppercase;
+    padding: 1rem;
+    color: #000;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/*  */
+/*  */
 
 footer {
-    margin-top: 100px;
-    background-color: rgb(58, 57, 55);
-    color: beige;
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .col-4 ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 30px;
 }
 
-footer .social-media {
-    display: flex;
-}
-
-footer .social-media p {
-    margin-right: 15px;
-    /* border: 1px solid beige; */
-    /* border-radius: 100%; */
-    padding: 5px;
+footer li {
     text-align: center;
-    width: 35px;
+}
+
+footer li:hover, footer a:hover {
+    color: gold;
     cursor: pointer;
 }
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+/*  */
+/*  */
 
 .main {
     margin: 20px;
@@ -114,10 +132,6 @@ footer .social-media p {
     justify-content: space-between;
 } 
 
-#home .homme-image {
-    width: 100%;
-}
-
 #accueil-categories .row {
     margin-bottom: 1.5em;
 }
@@ -146,27 +160,58 @@ footer .social-media p {
     filter: opacity(.9);
 }
 
+/*  */
+/*  */
+
+/* .contact-form-div {
+    border: 1px solid #000;
+    border-radius: 5px 20px;
+    box-shadow: .25rem 0.75rem 0.75rem;
+    background-color: rgba(175, 175, 175, 0.475);
+} */
+
+.contact-form-div div.form-group {
+    margin-bottom: .5em;
+}
+
+label[for="contact_fichier"] {
+    margin-bottom: .5em;
+}
+
+.contact-form-div input[type="file"] {
+    display: none;
+}
+
+.custom-file-label::before {
+    content: "Parcourir";
+    border: 1px solid #000;
+    border-radius: 3px;
+    outline: none;
+    margin-right: .75em;
+    padding: .25em .5em;
+    white-space: nowrap;
+    background-color: #f9f9f9;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.custom-file-label:hover::before {
+    background-color: #f2f2f2;
+}
+
+.required::after {
+    content: " *";
+    color: rgb(185, 30, 30);
+    font-size: large;
+}
+
+/*  */
+/*  */
+
 .bg-gray1 {
     background: rgb(194,194,194);
     background: linear-gradient(235deg, rgba(194,194,194,1) 50%, rgba(210,210,210,1) 100%);
-}*
-
-.btn {
-    height: 50px;
-    width: 50px;
-    background-color: rgb(58, 57, 55);
-    border-radius: 20%;
-    border: 1px solid beige;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    cursor: pointer;
-    color: beige;
 }
 
-.arrow {
-    color: beige;
-}
+/*  */
+/*  */

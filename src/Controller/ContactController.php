@@ -19,7 +19,10 @@ class ContactController extends AbstractController
         $formulaireContact->handleRequest($request);
         if ($formulaireContact->isSubmitted() && $formulaireContact->isValid()) {
             $contact = $formulaireContact->getData();
+            // téléchargement de l'image
+                        
             $mail = (new \Swift_Message('Projet Sport - demande de contact'))
+                ->attach(\Swift_Attachment::fromPath($_FILES['contact']['tmp_name']['fichier'])->setFilename($_FILES['contact']['name']['fichier']))
                 ->setFrom($contact['email'])
                 ->setTo('contact.elibird@gmail.com')
                 ->setBody(

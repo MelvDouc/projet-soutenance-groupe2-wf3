@@ -19,12 +19,14 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('civilite', ChoiceType::class, [
+                'required' => true,
                 'choices' => [
-                    'required' => true,
                     '- choix -' => '',
                     'Madame' => 'Madame',
-                    'Monsieur' => 'Monsieur',  
-                ]
+                    'Monsieur' => 'Monsieur',
+                    'Autre' => 'Autre'
+                ],
+                'label' => 'Civilité'
             ])
             ->add('nom', TextType::class, [
                 'required' => true,
@@ -50,8 +52,10 @@ class ContactType extends AbstractType
                     '- choix -' => '',
                     'La taille n\'est pas bonne' => 'taille',
                     'Ce n\'est pas ce que j\'ai commandé' => 'mauvaise commande',
+                    'Je n\'ai pas reçu ma commande' => 'Je n\'ai pas reçu ma commande',
+                    'Demande de remboursement' => 'Remboursement',
                     'Je souhaite postuler' => 'candidature',
-                    'Demande de remboursement' => 'Remboursement'
+                    'Autre' => 'Autre'
                 ],
                 'attr' => [
                     'minlength' => 50,
@@ -59,7 +63,7 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('numerodecommande', IntegerType::class, [
-                'required' => true,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'Exemple: 85479632154'
                 ],
@@ -75,6 +79,13 @@ class ContactType extends AbstractType
                 ],
                 'help' => '2000 caractères maximum'
             ])
+            ->add('fichier', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'png, jpg, jpeg ou pdf'
+                ]
+                ])
             ->add('envoyer', SubmitType::class);
         ;
     }

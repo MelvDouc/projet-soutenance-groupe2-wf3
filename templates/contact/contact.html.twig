@@ -4,54 +4,11 @@
 
 {% block body %}
 
-    <div class="p-4 background">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1>CONTACT</h1>
-            </div>
-        </div>
+    <h1 class="text-center">Nous contacter</h1>
+
+    <div class="col-6 mx-auto mb-5 p-3 page-container">
+        {{ form_start(formulaireContact) }}
+        {{ form_end(formulaireContact) }}
     </div>
-
-    
-        <main class="p-5">
-            <div class="col-4 offset-4 page-container">
-            {{ form_start(formulaireContact) }}
-            {{ form_end(formulaireContact) }}
-            </div>
-        </main>
-
-    <style>
-
-        .page-container {
-            border: 1px solid black;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            border-radius: 5px 20px;
-            box-shadow: 5px 5px 10px 7px;
-            background-color: rgba(175, 175, 175, 0.473);
-        }
-
-        .background {
-            background-color: rgba(158, 158, 8, 0.678);
-        }
-
-        .custom-file-label::after {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 3;
-            color: #ffffff;
-            content: "Parcourir";
-            background-color: #000000;
-        }
-
-        .required::after {
-            content: " *";
-            color: rgb(185, 30, 30);
-            font-size: large;
-        }
-
-    </style>
 
 {% endblock %}

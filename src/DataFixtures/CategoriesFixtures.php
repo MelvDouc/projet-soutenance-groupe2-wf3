@@ -17,22 +17,27 @@ class CategoriesFixtures extends Fixture
 
             $categories = [
                 1 => [
-                    'nom' => 'Football'
+                    'nom' => 'Football',
+                    'img' => 'football.jpg',
                 ],
                 2=> [
-                    'nom' => 'Basketball'
+                    'nom' => 'Basketball',
+                    'img' => 'basketball.jpg',
                 ],
                 3 => [
-                    'nom' => 'Volleyball'
+                    'nom' => 'Volleyball',
+                    'img' => 'volleyball.jpg',
                 ],
                 4 => [
-                    'nom' => 'Handball'
+                    'nom' => 'Handball',
+                    'img' => 'handball.jpg',
                 ]
             ];
 
             foreach($categories as $key => $value) {
                 $categorie = new Categories();
                 $categorie->setNom($value['nom']);
+                $categorie->setImg($value['img']);
                 // $this->setReference(self::CATEGORIES, $categorie);
                 $manager->persist($categorie);
 

@@ -15,16 +15,32 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/img1.jpg') }}" class="d-block w-100" alt="...">
+                    <picture>
+                        <source media="(min-width:1366px)" srcset="{{ asset('img/slider/1920x1080-img1.jpg') }}" class="d-block w-100" alt="...">
+                        <source media="(min-width:992px)" srcset="{{ asset('img/slider/1366x768-img1.jpg') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/slider/992x558-img1.jpg') }}" class="d-block w-100" alt="...">
+                    </picture>
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/img2.jpg') }}" class="d-block w-100" alt="...">
+                    <picture>
+                        <source media="(min-width:1366px)" srcset="{{ asset('img/slider/1920x1080-img2.jpg') }}" class="d-block w-100" alt="...">
+                        <source media="(min-width:992px)" srcset="{{ asset('img/slider/1366x768-img2.jpg') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/slider/992x558-img2.jpg') }}" class="d-block w-100" alt="...">
+                    </picture>
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/img3.jpg') }}" class="d-block w-100" alt="...">
+                    <picture>
+                        <source media="(min-width:1366px)" srcset="{{ asset('img/slider/1920x1080-img3.jpg') }}" class="d-block w-100" alt="...">
+                        <source media="(min-width:992px)" srcset="{{ asset('img/slider/1366x768-img3.jpg') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/slider/992x558-img3.jpg') }}" class="d-block w-100" alt="...">
+                    </picture>
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" alt="...">
+                    <picture>
+                        <source media="(min-width:1366px)" srcset="{{ asset('img/slider/1920x1080-img4.jpg') }}" class="d-block w-100" alt="...">
+                        <source media="(min-width:992px)" srcset="{{ asset('img/slider/1366x768-img4.jpg') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/slider/992x558-img4.jpg') }}" class="d-block w-100" alt="...">
+                    </picture>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"  data-bs-slide="prev">
@@ -47,14 +63,16 @@
 
         <div class="row">
             <div class="col-6">
-                <a href="#">
-                    <img src="{{ asset('img/sports/football2.jpg') }}">
+
+                <a href="/">
+                    <img src="{{ asset('img/1-categories/football.jpg') }}">
                 </a>
                 <h3 class="text-center">Football</h3>
             </div>
             <div class="col-6">
-                <a href="#">
-                    <img src="{{ asset('img/sports/basketball4.jpg') }}">
+
+                <a href="/">
+                    <img src="{{ asset('img/1-categories/basketball.jpg') }}">
                 </a>
                 <h3 class="text-center">Basketball</h3>
             </div>
@@ -62,15 +80,15 @@
 
         <div class="row">
             <div class="col-6">
-                <a href="#">
-                    <img src="{{ asset('img/sports/volleyball3.jpg') }}">
+                <a href="/">
+                    <img src="{{ asset('img/1-categories/volleyball.jpg') }}">
                 </a>
                 <h3 class="text-center">Volleyball</h3>
             </div>
 
             <div class="col-6">
-                <a href="#">
-                    <img src="{{ asset('img/sports/handball2.jpg') }}">
+                <a href="/">
+                    <img src="{{ asset('img/1-categories/handball.jpg') }}">
                 </a>
                 <h3 class="text-center">Handball</h3>
             </div>

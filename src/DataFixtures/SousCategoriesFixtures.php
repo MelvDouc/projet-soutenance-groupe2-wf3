@@ -15,22 +15,27 @@ class SousCategoriesFixtures extends Fixture
     {
         $souscategories = [
             1 => [
-                'nom' => 'Ballons'
+                'nom' => 'Ballons',
+                'img' => 'ballons/ballon-basketball.jpg'
             ],
             2 => [
-                'nom' => 'Maillots'
+                'nom' => 'Maillots',
+                'img' => 'maillots/maillot-basketball.jpg'
             ],
             3 => [
-                'nom' => 'Chaussures'
+                'nom' => 'Chaussures',
+                'img' => 'chaussures/chaussures-basketball.jpg'
             ],
             4 => [
-                'nom' => 'Accessoires'
-            ]
+                'nom' => 'Accessoires',
+                'img' => 'sacs/sac-adidas.jpg'
+                ]
         ];
 
         foreach($souscategories as $keytwo => $value) {
             $souscategorie = new SousCategories();
             $souscategorie->setNom($value['nom']);
+            $souscategorie->setImg($value['img']);
             // $this->setReference(self::SOUS_CATEGORIES, $souscategorie);
             $manager->persist($souscategorie);
         

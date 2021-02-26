@@ -11,6 +11,7 @@
         <tr>
             <th>N°</th>
             <th>Nom</th>
+            <th>Image</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -19,6 +20,12 @@
             <tr>
                 <td class="align-middle">{{ loop.index }}</td>
                 <td class="align-middle">{{ categorie.nom }}</td>
+                <td class="align-middle">
+                    <details> <!-- cache l'image pour qu'elle ne prenne pas trop de place --> 
+                        <summary>Voir</summary>
+                        <img src="{{ asset('img/1-categories/') ~ categorie.img }}" alt="photo {{ categorie.nom }}">
+                    </details>
+                </td>
                 <td class="align-middle">
                     <a href="{{ path('categorie_update', {'id':categorie.id}) }}"><i class="fas fa-pen-square"></i></a> | 
                     <a href="{{ path('categorie_delete', {'id':categorie.id}) }}"><i class="fas fa-trash-alt"></i></a>
@@ -38,6 +45,7 @@
         <tr>
             <th>N°</th>
             <th>Nom</th>
+            <th>Image</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -46,6 +54,12 @@
             <tr>
                 <td class="align-middle">{{ loop.index }}</td>
                 <td class="align-middle">{{ sousCategorie.nom }}</td>
+                <td class="align-middle">
+                    <details> <!-- cache l'image pour qu'elle ne prenne pas trop de place --> 
+                        <summary>Voir</summary>
+                        <img src="{{ asset('img/2-sous-categories/') ~ sousCategorie.img }}" alt="photo {{ sousCategorie.nom }}">
+                    </details>
+                </td>
                 <td class="align-middle">
                     <a href="{{ path('sous_categorie_update', {'id':sousCategorie.id}) }}"><i class="fas fa-pen-square"></i></a> | 
                     <a href="{{ path('sous_categorie_delete', {'id':sousCategorie.id}) }}"><i class="fas fa-trash-alt"></i></a>

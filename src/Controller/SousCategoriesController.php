@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Form\SousCategorieType;
 use App\Entity\SousCategories;
 use App\Repository\SousCategoriesRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,29 +17,33 @@ class SousCategoriesController extends AbstractController
      */
     public function createSousCategorie(Request $request)
     {
-        $sousCategorie = new SousCategories();
-        $form = $this->createForm(SousCategoriesType::class, $sousCategorie);
+        $sous_categorie = new SousCategories();
+        $form = $this->createForm(SousCategorieType::class, $sous_categorie);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-              
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_sous_categories'), $nomImg); // déplace l'image
+                $sous_categorie->setImg($nomImg);
                 $manager = $this->getDoctrine()->getManager();
-                $manager->persist($sousCategorie);
+                $manager->persist($sous_categorie);
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'La sous-catégorie a bien été ajoutée.'
+                    'La sous-categorie a bien été ajouté.'
                 );
             } else {
                 $this->addFlash(
                     'danger',
-                    'Une erreur est survenue lors de l\'ajout de la sous-catégorie'
+                    'Une erreur est survenue lors de l\'ajout de la sous-categorie'
                 );
-
+            }
             return $this->redirectToRoute('admin_sous_categories');
         }
-        return $this->render('admin/sousCategoriesForm.html.twig', [
-            'sousCategoriesForm' => $form->createView()
+        return $this->render('admin/sousCategorieForm.html.twig', [
+            'sousCategorieForm' => $form->createView()
         ]);
     }
 
@@ -47,19 +53,32 @@ class SousCategoriesController extends AbstractController
     public function updateSousCategorie(SousCategoriesRepository $souscategoriesRepository, $id, Request $request)
     {
         $sousCategorie = $souscategoriesRepository->find($id);
-        if ($form->isSubmitted() && $form->isValid()) {
-            
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($souscategorie);
-            $manager->flush();
-            $this->addFlash(
-                'success',
-                'Le sous-categorie a bien été modifiée'
-            );
-            return $this->redirectToRoute('admin_sous-categories');
+        $form = $this->createForm(SousCategorieType::class, $sous_categorie);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_sous_categories'), $nomImg); // déplace l'image
+                $sous_categorie->setImg($nomImg);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($sous_categorie);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'La sous-categorie a bien été modifiée.'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'édition de la sous-categorie'
+                );
+            }
+            return $this->redirectToRoute('admin_sous_categories');
         }
-        return $this->render('admin/sousCategoriesForm.html.twig', [
-            'sousCategoriesForm' => $form->createView()
+        return $this->render('admin/sousCategorieForm.html.twig', [
+            'sousCategorieForm' => $form->createView()
         ]);
     }
 
@@ -74,8 +93,8 @@ class SousCategoriesController extends AbstractController
         $manager->flush();
         $this->addFlash(
             'success',
-            'Le produit a bien été supprimé'
+            'La sous-catégorie a bien été supprimée'
         );
-        return $this->redirectToRoute('admin_sous_categories');
+        return $this->redirectToRoute('admin_categories');
     }
 }
