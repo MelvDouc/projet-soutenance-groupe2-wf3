@@ -16,10 +16,10 @@ class UserFixtures extends Fixture
 
             $users = [
                 1 => [
-                    'email' => '#',
-                    'roles' => ["#"],
-                    'password' => 'Version Cryptée de votre mot de passe',
-                    'pseudo' => '#',
+                    'email' => 'melv.douc@gmail.com',
+                    'roles' => ["ROLE_SUPER_ADMIN"],
+                    'password' => '$argon2id$v=19$m=65536,t=4,p=1$SUl3MnpvSERZQ0FQMmV1YQ$1euSMDSkumsdpgdhByro69jqIM4Cu25gNHvmTAyTwXU',
+                    'pseudo' => 'MelvinDoucet',
                     'date_inscription' => new \DateTime('now'),
                 ],
             ];
