@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription Newsletter{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center">Inscription Newsletter</h1>
+
+    <div class="col-6 mx-auto mb-5 p-3 page-container">
+        {{ form_start(formulaireNewsletter) }}
+        {{ form_end(formulaireNewsletter) }}
+    </div>
+
+{% endblock %}
