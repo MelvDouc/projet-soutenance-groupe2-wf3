@@ -1,0 +1,25 @@
+{% extends 'basePopup.html.twig' %}
+
+{% block title %}Sous-catégorie - formulaire{% endblock title %}
+
+{% block body %}
+<h3>Ajouter une catégorie</h2>
+
+{{ form_start(sousCategorieForm) }}
+  <div class="col-12 my-3">
+    {{ form_label(sousCategorieForm.nom) }}
+    {{ form_widget(sousCategorieForm.nom) }}
+  </div>
+
+  <div class="col-12 my-3">
+    {{ form_label(sousCategorieForm.img) }}
+    {{ form_widget(sousCategorieForm.img) }}
+  </div>
+
+  <div class="text-right">
+    {{ form_widget(sousCategorieForm.valider )}}
+  </div>
+
+{{ form_end(sousCategorieForm) }}
+
+{% endblock %}

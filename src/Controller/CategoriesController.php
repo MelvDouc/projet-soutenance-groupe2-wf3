@@ -63,23 +63,27 @@ class CategoriesController extends AbstractController
         
     }
 
-    
     /**
      * @Route("/admin/categorie/create/popup", name="categorie_create_popup")
      */
-    public function createCategoriePopup(Request $request)
+    public function createPopupCategorie(Request $request)
     {
         $categorie = new Categories();
         $form = $this->createForm(CategorieType::class, $categorie);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_categories'), $nomImg); // déplace l'image
+                $categorie->setImg($nomImg);
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($categorie);
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'Le categorie a bien été ajouté.'
+                    'La categorie a bien été ajouté.'
                 );
             } else {
                 $this->addFlash(
