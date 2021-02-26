@@ -16,11 +16,23 @@
         <div class="col-4 my-3">
             {{ form_label(produitForm.id_categories) }}
             {{ form_widget(produitForm.id_categories) }}
+            <a href="{{ path('categorie_create_popup') }}" 
+            class="btn btn-outline-light text-dark"
+            target="popup" 
+            onclick="window.open('{{ path('categorie_create_popup') }}','popup','width=500,height=400'); return false;">
+                + Ajouter une catégorie (beta)
+            </a>
         </div>
 
         <div class="col-4 my-3">
             {{ form_label(produitForm.id_sous_categories) }}
             {{ form_widget(produitForm.id_sous_categories) }}
+            <a href="{{ path('sous_categorie_create_popup') }}" 
+            class="btn btn-outline-light text-dark"
+            target="popup" 
+            onclick="window.open('{{ path('sous_categorie_create_popup') }}','popup','width=500,height=400'); return false;">
+                + Ajouter une sous-catégorie (beta)
+            </a>
         </div>
         
         <div class="col-12 my-3">

@@ -163,18 +163,22 @@ footer a {
 /*  */
 /*  */
 
-.page-container {
+/* .contact-form-div {
     border: 1px solid #000;
     border-radius: 5px 20px;
     box-shadow: .25rem 0.75rem 0.75rem;
     background-color: rgba(175, 175, 175, 0.475);
+} */
+
+.contact-form-div div.form-group {
+    margin-bottom: .5em;
 }
 
 label[for="contact_fichier"] {
     margin-bottom: .5em;
 }
 
-.page-container input[type="file"] {
+.contact-form-div input[type="file"] {
     display: none;
 }
 
@@ -186,10 +190,13 @@ label[for="contact_fichier"] {
     margin-right: .75em;
     padding: .25em .5em;
     white-space: nowrap;
-    background-color: #fff;
+    background-color: #f9f9f9;
     -webkit-user-select: none;
     cursor: pointer;
-    text-shadow: 1px 1px #fff;
+}
+
+.custom-file-label:hover::before {
+    background-color: #f2f2f2;
 }
 
 .required::after {

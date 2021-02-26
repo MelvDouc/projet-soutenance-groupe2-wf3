@@ -33,18 +33,30 @@ class UsersController extends AbstractController
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($user);
-            $manager->flush();
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $user->setPassword( 
+                    $passwordEncoder->encodePassword( // encode le mot de passe
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
+                $user->setDateInscription( new \DateTime('now') ); // met la date d'inscription à aujourd'hui
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($user);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'L\'utilisateur a bien été ajouté.'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'ajout de l\'utilisateur'
+                );
+            }
             return $this->redirectToRoute('admin_users');
-       }
+        }
         return $this->render('admin/userForm.html.twig', [
             'userForm' => $form->createView()
         ]);

@@ -37,6 +37,11 @@ class CategoriesController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_categories'), $nomImg); // déplace l'image
+                $categorie->setImg($nomImg);
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($categorie);
                 $manager->flush();
@@ -59,20 +64,67 @@ class CategoriesController extends AbstractController
     }
 
     /**
+     * @Route("/admin/categorie/create/popup", name="categorie_create_popup")
+     */
+    public function createPopupCategorie(Request $request)
+    {
+        $categorie = new Categories();
+        $form = $this->createForm(CategorieType::class, $categorie);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_categories'), $nomImg); // déplace l'image
+                $categorie->setImg($nomImg);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($categorie);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'La categorie a bien été ajouté.'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'ajout de la categorie'
+                );
+            }
+        }
+        return $this->render('admin/categoriePopupForm.html.twig', [
+            'categorieForm' => $form->createView()
+        ]);
+    }
+
+    /**
      * @Route("/admin/categorie/update-{id}", name="categorie_update")
      */
     public function updateCategorie(CategoriesRepository $categoriesRepository, $id, Request $request)
     {
         $categorie = $categoriesRepository->find($id);
-        if ($form->isSubmitted() && $form->isValid()) {
-            
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($categorie);
-            $manager->flush();
-            $this->addFlash(
-                'success',
-                'La categorie a bien été modifiée'
-            );
+        $form = $this->createForm(CategorieType::class, $categorie);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $infoImg = $form['img']->getData(); // récupère les infos de l'image
+                $extensionImg = $infoImg->guessExtension(); // récupère le format de l'image
+                $nomImg = time() . '.' . $extensionImg; // compose un nom d'image unique
+                $infoImg->move($this->getParameter('dossier_photos_categories'), $nomImg); // déplace l'image
+                $categorie->setImg($nomImg);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($categorie);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'La categorie a bien été modifiée.'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'édition de la categorie'
+                );
+            }
             return $this->redirectToRoute('admin_categories');
         }
         return $this->render('admin/categorieForm.html.twig', [
