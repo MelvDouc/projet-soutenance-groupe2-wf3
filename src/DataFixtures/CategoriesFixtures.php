@@ -18,19 +18,19 @@ class CategoriesFixtures extends Fixture
             $categories = [
                 1 => [
                     'nom' => 'Football',
-                    'img' => "{{ asset('\img\1-categories\football.jpg') }}",
+                    'img' => 'football.jpg',
                 ],
                 2=> [
                     'nom' => 'Basketball',
-                    'img' => "{{ asset('\img\1-categories\basketball.jpg') }}",
+                    'img' => 'basketball.jpg',
                 ],
                 3 => [
                     'nom' => 'Volleyball',
-                    'img' => "{{ asset('\img\1-categories\volleytball.jpg') }}",
+                    'img' => 'volleyball.jpg',
                 ],
                 4 => [
                     'nom' => 'Handball',
-                    'img' => "{{ asset('\img\1-categories\handball.jpg') }}",
+                    'img' => 'handball.jpg',
                 ]
             ];
 

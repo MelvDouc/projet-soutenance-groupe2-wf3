@@ -5,7 +5,10 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     dossier_photos_produits: '%kernel.project_dir%/public/img/produit'
+    dossier_photos_categories: '%kernel.project_dir%/public/img/1-categories'
+    dossier_photos_sous_categories: '%kernel.project_dir%/public/img/2-sous-categories'
     dossier_images_clients: '%kernel.project_dir%/public/img/contact'
+
     app.copyright: 'Copyright &copy; 2021 - François BANITZ, Matthieu SCHERER, Melvin DOUCET et Wassim KASSEM'
 services:
     # default configuration for services in *this* file
