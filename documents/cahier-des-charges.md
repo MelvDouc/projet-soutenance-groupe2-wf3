@@ -5,9 +5,7 @@
         * espace admin
         * inscription & connexion utilisateurs
         * formulaire ajout catégorie
-        * CRUD de toutes les tables
-        * CRUD des utilisateurs
-        * CRUD des produits
+        * CRUD de toutes les tables ou c'est nécessaire
         * ajout des données définitives dans la base de données
         * gestion des erreurs
     * Matthieu :
