@@ -21,7 +21,6 @@
         * style de page produit
         * aspect visuel avec Wassim
         * style des formulaires
-        * traductions
     * Wassim :
         * page d'accueil
         * aspect visuel avec Melvin
