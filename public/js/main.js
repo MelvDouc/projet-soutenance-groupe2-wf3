@@ -1,16 +1,29 @@
 window.addEventListener('DOMContentLoaded', function () {
     const footerCol4Uls = document.querySelectorAll('footer .col-4 ul'),
-        registrationFormPseudo = document.querySelector('#registration_form_pseudo');
+        registrationFormPseudo = document.querySelector('#registration_form_pseudo'),
+        navULCategories = document.querySelectorAll('nav ul li');
+
+    function getPropValue(elem, prop) {
+        return parseFloat(window.getComputedStyle(elem).getPropertyValue(prop));
+    }
 
     function equalizeHeights(elems) {
         let heights = [];
-        let getHeight = elem => parseFloat(window.getComputedStyle(elem).height);
-        Object.values(elems).forEach(elem => heights.push(getHeight(elem)));
+        Object.values(elems).forEach(elem => heights.push(getPropValue(elem, 'height')));
         Object.values(elems).forEach(elem => elem.style.height = Math.max(...heights) + 'px');
     }
 
     equalizeHeights(footerCol4Uls);
     window.addEventListener('resize', equalizeHeights(footerCol4Uls))
+
+    //
+
+    function equalizeWidths(elems) {
+        let childrenWidth = 100 / elems.length;
+        Object.values(elems).forEach(elem => elem.style.width = childrenWidth + '%');
+    }
+
+    equalizeWidths(navULCategories);
 
     //
 
@@ -26,4 +39,8 @@ window.addEventListener('DOMContentLoaded', function () {
     if (registrationFormPseudo !== null) {
         registrationFormPseudo.setAttribute('placeholder', 'Exemple : ' + generateRandomUsername());
     }
+
+    //
+
+
 })
