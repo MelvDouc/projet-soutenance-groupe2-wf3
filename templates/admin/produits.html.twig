@@ -45,6 +45,26 @@
 
 <div class="text-right">
     <a href="{{ path('produit_create') }}" class="btn btn-outline-dark">Ajouter un produit</a>
-</div>   
+</div>
+
+<details>
+    <summary>Generation Fixture produits</summary>
+    <xmp class="bg-dark text-light">
+    $produits = [ 
+        {% for produit in produits %}
+    {{ loop.index }} => [
+                'nom' => '{{ produit.nom }}',
+                'description' => '{{ produit.description }}',
+                'img' => '{{ produit.img }}',
+                'prix' => {{ produit.prix }},
+                'categorie' => ,
+                'sous_categorie' => ,
+            ],
+        {% endfor %}
+];
+
+    </xmp>
+</details>
+
 
 {% endblock %}

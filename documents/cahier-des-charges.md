@@ -59,6 +59,7 @@
     * maitrise imparfaite de Symfony
     * méconnaissance de la législation
     * problèmes d'accessibilité sur l'ordinateur de WF3 pour Wassim
+    * responsive
 - solutions aux contraintes :
     * utilisation de Discord, Trello et Github
     * pratique et autoformation

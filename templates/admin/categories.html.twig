@@ -37,7 +37,19 @@
 <div class="text-right">
     <a href="{{ path('categorie_create') }}" class="btn btn-outline-dark">Ajouter une catégorie</a>
 </div>   
-
+<details>
+    <summary>Generation Fixture catégories</summary>
+    <xmp class="bg-dark text-light">
+        $categories = [ 
+            {% for categorie in categories %}
+    {{ loop.index }} => [
+                    'nom' => '{{ categorie.nom }}',
+                    'img' => '{{ categorie.img }}',
+                ],
+            {% endfor %}];
+    </xmp>
+</details>
+<br><br>
 <h2 class="pb-5">Liste des sous-catégories</h2>
 
 <table class="table table-bordered table-hover table-sm table-dark table-striped text-center">
@@ -70,6 +82,17 @@
 </table>
 <div class="text-right">
     <a href="{{ path('sous_categorie_create') }}" class="btn btn-outline-dark">Ajouter une sous-catégorie</a>
-</div>   
-
+</div>
+<details>
+    <summary>Generation Fixture sous-catégories</summary>
+    <xmp class="bg-dark text-light">
+        $sous_categories = [ 
+            {% for sousCategorie in sousCategories %}
+    {{ loop.index }} => [
+                    'nom' => '{{ sousCategorie.nom }}',
+                    'img' => '{{ sousCategorie.img }}',
+                ],
+            {% endfor %}];
+    </xmp>
+</details>
 {% endblock %}
