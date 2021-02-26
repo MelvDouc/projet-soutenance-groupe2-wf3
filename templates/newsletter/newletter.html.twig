@@ -1,0 +1,27 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Newsletter{% endblock %}
+
+{% block body %}
+
+<h2 class="pb-5">Liste des email inscrit à la Newsletter</h2>
+
+<table class="table table-bordered table-hover table-sm table-dark table-striped text-center">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for newsletters in newsletter %}
+            <tr>
+                <td class="align-middle">{{ loop.index }}</td>
+                <td class="align-middle">{{ newsletters.email }}</td>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -215,5 +215,18 @@ label[for="contact_fichier"] {
     background: linear-gradient(235deg, rgba(194,194,194,1) 50%, rgba(210,210,210,1) 100%);
 }
 
-/*  */
+/* PAGE NEWSLETTER */
+
+#newsletter_envoyer {
+    margin-top: 20px;
+}
+
+label[for='newsletter_email'] {
+    margin-bottom: 20px;
+}
+
+.texte {
+    font-weight: 800;
+}
+
 /*  */
