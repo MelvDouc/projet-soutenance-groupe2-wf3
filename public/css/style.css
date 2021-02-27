@@ -2,6 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&display=swap');
 
+:root {
+    --facebook-blue: #4867aa;
+    --twitter-blue: #00a2f3;
+    --linkedin-blue: #0077b5;
+    --instagram-purple: #b431ae;
+    --youtube-red: #ff0000;
+
+    --gradient1: linear-gradient(to left, #06f, #03f, #00f);
+    --gradient2: linear-gradient(to right, #f2f2f2, #f9f9f9);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -13,6 +24,11 @@ html, body {
 
 /*  */
 /*  */
+
+#head {
+    background: #06f;
+    background: var(--gradient1);
+}
 
 #head a {
     text-decoration: none;
@@ -30,7 +46,7 @@ html, body {
 }
 
 #head h1 {
-    border: 1px solid #444;
+    border: 1px solid #06f;
     border-radius: 5px;
     padding: .115em .5em;
 }
@@ -91,16 +107,33 @@ footer .col-4 ul {
 
 footer li {
     text-align: center;
+    cursor: pointer;
 }
 
-footer li:hover, footer a:hover {
+footer li:hover:not(#social-media li:hover), footer a:hover {
     color: gold;
-    cursor: pointer;
 }
 
 footer a {
     text-decoration: none;
     color: #fff;
+}
+
+footer i[class*="facebook"]:hover {
+    color: var(--facebook-blue);
+}
+
+footer i[class*="twitter"]:hover {
+    color: var(--twitter-blue);
+}
+footer i[class*="instagram"]:hover {
+    color: var(--instagram-purple);
+}
+footer i[class*="linkedin"]:hover {
+    color: var(--linkedin-blue);
+}
+footer i[class*="youtube"]:hover {
+    color: var(--youtube-red);
 }
 /*  */
 /*  */
@@ -212,7 +245,7 @@ label[for="contact_fichier"] {
 
 .bg-gray1 {
     background: rgb(194,194,194);
-    background: linear-gradient(235deg, rgba(194,194,194,1) 50%, rgba(210,210,210,1) 100%);
+    background: var(--gradient2);
 }
 
 /* PAGE NEWSLETTER */
