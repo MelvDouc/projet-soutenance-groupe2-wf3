@@ -13,12 +13,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProduitController extends AbstractController
 {
     /**
-     * @Route("/produit", name="produit")
+     * @Route("/tous-les-produits", name="produits")
      */
-    public function index(): Response
+    public function index(ProduitsRepository $produitsRepository): Response
     {
+        $produits = $this->getDoctrine()->getRepository(Produits::class)->findAll();
         return $this->render('produit/produit.html.twig', [
-            'controller_name' => 'ProduitController',
+            'produits' => $produits
         ]);
     }
 

@@ -1,15 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produit #{{ produit.id }} {% endblock %}
+{% block title %}
+    {% for produit in produits %}  
+            {{produit.id}}   
+    {% endfor %}
+{% endblock %}
 
 {% block body %}
 
-    <h1>{{ produit.nom }}</h1>
+<div class="row">
+    {% for produit in produits %}
+        <div class="col-4 mt-4">
+            <div class="border border-dark rounded p-2 clearfix" style="height: 65em;">
+                <h1>{{ produit.nom }}</h1>
 
-    <img src="{{ asset('img/produit/') ~ produit.img }}" alt="Image non disponible.">
+                <img src="{{ asset('img/produit/') ~ produit.img }}" alt="Image non disponible." class="img-fluid img-responsive">
 
-    <p>{{ produit.description }}</p>
+                <p>{{ produit.description }}</p>
 
-    <p>Prix&thinsp;: {{ produit.prix }} €</p>
+                <p>Prix&thinsp;: {{ produit.prix }} €</p>
 
+                <div>
+                    <a href="{{ path('panier_ajout', {'id': produit.id }) }}" class="btn btn-success">
+                        <i class="fas fa-shopping-cart mr-1"></i>
+                        Ajouter au panier
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
