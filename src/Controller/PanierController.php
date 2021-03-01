@@ -4,6 +4,8 @@ namespace App\Controller;
 
 
 use App\Repository\ProduitsRepository;
+use App\Repository\CategoriesRepository;
+use App\Repository\SousCategoriesRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -14,8 +16,11 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier", name="panier")
      */
-    public function index(SessionInterface $sessionInterface, ProduitsRepository $produitsRepository)
+    public function index(SessionInterface $sessionInterface, ProduitsRepository $produitsRepository, CategoriesRepository $categoriesRepository, SousCategoriesRepository $souscategoriesRepository)
     {
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $souscategoriesRepository->findAll();
+        
         $panier = $sessionInterface->get('panier', []);
 
         $monPanier = [];
@@ -36,7 +41,9 @@ class PanierController extends AbstractController
 
         return $this->render('panier/panier.html.twig', [
             'mesProduits' => $monPanier,
-            'total' => $total
+            'total' => $total,
+            'categories' => $categories,
+            'sousCategories' => $sousCategories,
         ]);
     }
 

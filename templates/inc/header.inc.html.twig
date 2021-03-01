@@ -1,0 +1,51 @@
+<header class="mb-5 p-3 text-light">
+    <div class="row">
+        <div class="col-3 d-flex justify-content-center align-items-center">
+            <div id="brand">
+                <a href="{{ path('home') }}" title="Page d'accueil">
+                    <h1 class="mb-0 fs-1">WF-Sport</h1>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-9 mx-auto">
+                <nav class="navbar navbar-expand navbar-lg p-0 w-100 d-flex justify-content-center">
+                    <ul class="p-0 m-0 w-100">
+                        {% for categorie in categories %}
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn text-light text-uppercase dropdown-toggle" type="button" id="{{ categorie.nom }}-dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ categorie.nom }}</button>
+                                <ul class="dropdown-menu" aria-labelledby="{{ categorie.nom }}-dropdown">
+                                    {% for sousCategorie in sousCategories %}
+                                    <li>
+                                        <a href="{{ path('produits_souscategories', {'cat': categorie.nom,'sousCat': sousCategorie.nom}) }}">{{ sousCategorie.nom }}</a>
+                                    </li>
+                                    {% endfor %} 
+                                </ul>
+                            </div>
+                        </li>
+                        {% endfor %}  
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="col-3 d-flex justify-content-center align-items-center">
+            <div class="fs-2" id="icons">
+                <a href="{{ path('app_login') }}" title="Connexion">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                </a>
+                <a href="" title="Mon compte">
+                    <i class="bi bi-person"></i>
+                </a>
+                <a href="{{ path('panier') }}" title="Mon panier">
+                    <i class="bi bi-bag"></i>
+                </a>
+                <a href="{{ path('app_logout') }}" title="Déconnexion">
+                    <i class="bi bi-box-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

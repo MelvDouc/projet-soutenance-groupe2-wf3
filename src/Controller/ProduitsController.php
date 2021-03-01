@@ -16,11 +16,16 @@ class ProduitsController extends AbstractController
      */
     public function index(CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository, ProduitsRepository $produitsRepository, $cat, $sousCat): Response
     {
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
+
         $catId = $categoriesRepository->findByNom($cat)->getId();
         $sousCatId = $sousCategoriesRepository->findByNom($sousCat)->getId();
         $produits = $produitsRepository->products($catId, $sousCatId);
         return $this->render('produits/index.html.twig', [
             'produits' => $produits,
+            'categories' => $categories,
+            'sousCategories' => $sousCategories,
         ]);
     }
 }

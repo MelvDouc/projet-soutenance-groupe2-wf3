@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Produits;
 use App\Form\ProduitType;
 use App\Repository\ProduitsRepository;
+use App\Repository\CategoriesRepository;
+use App\Repository\SousCategoriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,11 +17,16 @@ class ProduitController extends AbstractController
     /**
      * @Route("/tous-les-produits", name="tous_les_produits")
      */
-    public function index(ProduitsRepository $produitsRepository): Response
+    public function index(ProduitsRepository $produitsRepository, CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository): Response
     {
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
+
         $produits = $this->getDoctrine()->getRepository(Produits::class)->findAll();
         return $this->render('produit/produit.html.twig', [
-            'produits' => $produits
+            'produits' => $produits,
+            'categories' => $categories,
+            'sousCategories' => $sousCategories,
         ]);
     }
 

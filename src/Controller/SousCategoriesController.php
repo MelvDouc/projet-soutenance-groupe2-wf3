@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\SousCategorieType;
 use App\Entity\SousCategories;
+use App\Repository\CategoriesRepository;
 use App\Repository\SousCategoriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +16,12 @@ class SousCategoriesController extends AbstractController
     /**
      * @Route("/sous-categorie/football", name="souscategorie_football")
      */
-    public function football(SousCategoriesRepository $sousCategoriesRepository)
+    public function football(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
     {
-        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
         return $this->render('sousCategories/sousCategoriesFootball.html.twig', [
+            'categories' => $categories,
             'sousCategories' => $sousCategories
         ]);
     }
@@ -26,10 +29,12 @@ class SousCategoriesController extends AbstractController
     /**
      * @Route("/sous-categorie/basketball", name="souscategorie_basketball")
      */
-    public function basketball(SousCategoriesRepository $sousCategoriesRepository)
+    public function basketball(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
     {
-        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
         return $this->render('sousCategories/sousCategoriesBasketball.html.twig', [
+            'categories' => $categories,
             'sousCategories' => $sousCategories
         ]);
     }
@@ -37,10 +42,12 @@ class SousCategoriesController extends AbstractController
     /**
      * @Route("/sous-categorie/handball", name="souscategorie_handball")
      */
-    public function handball(SousCategoriesRepository $sousCategoriesRepository)
+    public function handball(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
     {
-        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
         return $this->render('sousCategories/sousCategoriesHandball.html.twig', [
+            'categories' => $categories,
             'sousCategories' => $sousCategories
         ]);
     }
@@ -48,10 +55,12 @@ class SousCategoriesController extends AbstractController
     /**
      * @Route("/sous-categorie/volleyball", name="souscategorie_volleyball")
      */
-    public function volleyball(SousCategoriesRepository $sousCategoriesRepository)
+    public function volleyball(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
     {
-        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
         return $this->render('sousCategories/sousCategoriesVolleyball.html.twig', [
+            'categories' => $categories,
             'sousCategories' => $sousCategories
         ]);
     }
