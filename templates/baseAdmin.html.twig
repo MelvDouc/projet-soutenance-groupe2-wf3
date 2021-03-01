@@ -40,6 +40,11 @@
                                 <i class="fas fa-align-left"></i> - Catégories
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ path('admin_newsletters') }}">
+                                <i class="fas fa-envelope"></i> - Inscrits newsletter
+                            </a>
+                        </li>
                         {% if is_granted('ROLE_SUPER_ADMIN') %}
                             <li>
                                 <a href="{{ path('admin_users') }}">
