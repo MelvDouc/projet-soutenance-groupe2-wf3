@@ -2,9 +2,9 @@ window.addEventListener('DOMContentLoaded', function () {
     const registrationFormPseudo = document.querySelector('#registration_form_pseudo'),
         headerNavLinks = document.querySelectorAll('header nav .dropdown a');
 
-    // function getPropValue(elem, prop) {
-    //     return parseFloat(window.getComputedStyle(elem).getPropertyValue(prop));
-    // }
+    function getPropValue(elem, prop) {
+        return parseFloat(window.getComputedStyle(elem).getPropertyValue(prop));
+    }
 
     function generateRandomUsername() {
         let randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -29,4 +29,15 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     setCategoryLinks();
+
+    //
+
+    function equalizeCardHeights() {
+        let cardBodies = document.querySelectorAll('div.card-body'),
+            heights = [];
+        Object.values(cardBodies).forEach(card => heights.push(getPropValue(card, 'height')));
+        Object.values(cardBodies).forEach(card => card.style.height = Math.max(...heights) + 'px');
+    }
+
+    equalizeCardHeights();
 })
