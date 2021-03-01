@@ -69,7 +69,7 @@ nav > ul > li {
 
 nav > ul > li:hover {
     background-color: cornflowerblue;
-}
+} 
 
 nav .dropdown > button {
     text-transform: uppercase;

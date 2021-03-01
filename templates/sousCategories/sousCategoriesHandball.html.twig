@@ -8,9 +8,11 @@
         {% for sousCategorie in sousCategories %}
             <div class="col-5 pb-5 mb-5">
                 <div class="card h-100">
+                    <a href="{{ path('souscategorie_handball') }}">
                         <img class="card-img-top" style="height: 450px;" src="{{ asset('img/2-sous-categories/FootBall/' ~ sousCategorie.img) }}" alt="Image non disponible." class="img-fluid img-responsive">
-                    <div class="card-body">
-                        <h2 class="card-title text-center">{{ sousCategorie.nom }}</h2>
+                    </a>
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                        <h2 class="card-title text-uppercase">{{ sousCategorie.nom }}</h2>
                     </div>
                 </div>
                     <div class="card-body text-center bg-secondary" style="font-weight: bolder;">
