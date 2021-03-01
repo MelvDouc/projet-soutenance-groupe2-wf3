@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{produit.nom}} {% endblock %}
+
+{% block body %}
+
+<img src="{{ asset('img/produit/') ~ produit.img }}" alt="Image non disponible." class="card-img-top">
+<h2 class="card-title">{{ produit.nom }}</h2>
+<p class="card-text">{{ produit.description }}</p>
+<p>
+    Prix&thinsp;: {{ produit.prix }} €
+</p>
+
+<a href="{{ path('panier_ajout', {'id': produit.id }) }}" class="btn btn-success text-white" style="font-weight: bolder;">
+    <i class="fas fa-shopping-cart mr-1"></i>
+    Ajouter au panier
+</a>
+
+{% endblock %}

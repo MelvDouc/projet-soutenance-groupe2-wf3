@@ -15,9 +15,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CategoriesController extends AbstractController
 {
     /**
+     * @Route("/categorie/{cat}", name="categories")
+     */
+    public function index(CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository, $cat): Response
+    {
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
+        // $catNom = $categoriesRepository->findByNom($cat)->getNom();
+
+        return $this->render('categories/index.html.twig', [
+            'cat' => $cat,
+            'categories' => $categories,
+            'sousCategories' => $sousCategories,
+        ]);
+    }
+
+    /**
      * @Route("/admin/categories", name="admin_categories")
      */
-    public function index(CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository): Response
+    public function indexAdmin(CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository): Response
     {
         $categories = $categoriesRepository->findAll();
         $sousCategories = $sousCategoriesRepository->findAll();

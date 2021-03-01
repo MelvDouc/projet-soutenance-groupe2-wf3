@@ -33,11 +33,16 @@ class ProduitController extends AbstractController
     /**
      * @Route("/produit-{id}", name="voir_produit")
      */
-    public function voir($id) {
+    public function voir($id, ProduitsRepository $produitsRepository, CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository) {
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
+
         $produit = $this->getDoctrine()->getRepository(Produits::class)->find($id);
 
-        return $this->render('produit/produit.html.twig', [
-            'produit' => $produit
+        return $this->render('produit/index.html.twig', [
+            'produit' => $produit,
+            'categories' => $categories,
+            'sousCategories' => $sousCategories,
         ]);
     }
 

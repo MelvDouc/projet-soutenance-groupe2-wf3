@@ -62,36 +62,15 @@
         </div>
 
         <div class="row">
-            <div class="col-6">
+            {% for categorie in categories %}
+                <div class="col-6">
+                    <a href="{{ path('categories', {'cat': categorie.nom}) }}">
+                        <img src="{{ asset('img/1-categories/') ~ categorie.img }}">
+                    </a>
+                    <h3 class="text-center"> {{ categorie.nom }} </h3>
+                </div>
+            {% endfor %}  
 
-                <a href="{{ path('souscategorie_football') }}">
-                    <img src="{{ asset('img/1-categories/football.jpg') }}">
-                </a>
-                <h3 class="text-center">Football</h3>
-            </div>
-            <div class="col-6">
-
-                <a href="{{ path('souscategorie_basketball') }}">
-                    <img src="{{ asset('img/1-categories/basketball.jpg') }}">
-                </a>
-                <h3 class="text-center">Basketball</h3>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-6">
-                <a href="{{path('souscategorie_volleyball') }}">
-                    <img src="{{ asset('img/1-categories/volleyball.jpg') }}">
-                </a>
-                <h3 class="text-center">Volleyball</h3>
-            </div>
-
-            <div class="col-6">
-                <a href="{{path('souscategorie_handball') }}">
-                    <img src="{{ asset('img/1-categories/handball.jpg') }}">
-                </a>
-                <h3 class="text-center">Handball</h3>
-            </div>
         </div>
     </div>
 
