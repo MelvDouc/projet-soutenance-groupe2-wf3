@@ -30,64 +30,20 @@ header {
     background: var(--gradient1);
 }
 
-header a {
-    text-decoration: none;
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbrand {
     color: #fff;
 }
 
-header a:hover {
-    color: gold;
-}
-
-nav a{
-    color: rgb(54, 54, 54);
-}
-
-header h1 {
-    border: 1px solid #06f;
-    border-radius: 5px;
-    padding: .115em .5em;
-    text-align: center;
-    width: fit-content;
-}
-
-header h1:hover {
-    border-color: gold;
-}
-
-header .col-3 {
-    padding: 0;
-}
-
-nav > ul {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    list-style-type: none;
-}
-
-nav > ul > li {
-    text-align: center;
-    cursor: pointer;
-    transition: background-color .25s;
-}
-
-nav > ul > li:hover {
-    background-color: cornflowerblue;
-}
-
-nav .dropdown > button {
-    text-transform: uppercase;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav .dropdown > button:hover {
+#icons i {
     color: #fff;
+    font-size: 2rem;
 }
 
-nav .dropdown button {
-    width: 100%;
-}
 
 /*  */
 /*  */
@@ -251,19 +207,7 @@ label[for='newsletter_email'] {
 /*  */
 
 @media screen and (max-width: 992px) {
-    #icons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: .5em;
-    }
-
-    nav ul {
-        grid-template-columns: 1fr;
-    }
-
-    nav .dropdown > button {
-        padding: .15em;
-    }
+   
 
     footer li {
         font-size: .8em;
