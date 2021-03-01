@@ -1,51 +1,43 @@
-<header class="mb-5 p-3 text-light">
-    <div class="row">
-        <div class="col-3 d-flex justify-content-center align-items-center">
-            <div id="brand">
-                <a href="{{ path('home') }}" title="Page d'accueil">
-                    <h1 class="mb-0 fs-1">WF-Sport</h1>
-                </a>
-            </div>
-        </div>
+<header class="px-3 py-1 mb-5">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand px-3 py-2 fw-bold" href="{{ path('home') }}" title="">WF-Sport</a>
         
-        <div class="col-6 d-flex align-items-center">
-            <div class="col-9 mx-auto">
-                <nav class="navbar navbar-expand navbar-lg p-0 w-100 d-flex justify-content-center">
-                    <ul class="p-0 m-0 w-100">
-                        {% for categorie in categories %}
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button class="btn text-light text-uppercase dropdown-toggle" type="button" id="{{ categorie.nom }}-dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ categorie.nom }}</button>
-                                <ul class="dropdown-menu" aria-labelledby="{{ categorie.nom }}-dropdown">
-                                    {% for sousCategorie in sousCategories %}
-                                    <li>
-                                        <a class="dropdown-item" href="{{ path('produits_souscategories', {'cat': categorie.nom,'sousCat': sousCategorie.nom}) }}">{{ sousCategorie.nom }}</a>
-                                    </li>
-                                    {% endfor %} 
-                                </ul>
-                            </div>
-                        </li>
-                        {% endfor %}  
-                    </ul>
-                </nav>
-            </div>
+        <div class="collapse navbar-collapse" id="headerNav">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                {% for categorie in categories %}
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn text-light text-uppercase dropdown-toggle" type="button" id="{{ categorie.nom }}-dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ categorie.nom }}</button>
+                        <ul class="dropdown-menu" aria-labelledby="{{ categorie.nom }}-dropdown">
+                            {% for sousCategorie in sousCategories %}
+                            <li>
+                                <a class="dropdown-item" href="{{ path('produits_souscategories', {'cat': categorie.nom,'sousCat': sousCategorie.nom}) }}">{{ sousCategorie.nom }}</a>
+                            </li>
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                </li>
+                {% endfor %}  
+            </ul>
         </div>
 
-        <div class="col-3 d-flex justify-content-center align-items-center">
-            <div class="fs-2" id="icons">
-                <a href="{{ path('app_login') }}" title="Connexion">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                </a>
-                <a href="" title="Mon compte">
-                    <i class="bi bi-person"></i>
-                </a>
-                <a href="{{ path('panier') }}" title="Mon panier">
-                    <i class="bi bi-bag"></i>
-                </a>
-                <a href="{{ path('app_logout') }}" title="Déconnexion">
-                    <i class="bi bi-box-arrow-left"></i>
-                </a>
-            </div>
+        <div id="icons">
+            <a href="{{ path('app_login') }}" title="Connexion">
+                <i class="bi bi-box-arrow-in-right"></i>
+            </a>
+            <a href="" title="Mon compte">
+                <i class="bi bi-person"></i>
+            </a>
+            <a href="{{ path('panier') }}" title="Mon panier">
+                <i class="bi bi-bag"></i>
+            </a>
+            <a href="{{ path('app_logout') }}" title="Déconnexion">
+                <i class="bi bi-box-arrow-left"></i>
+            </a>
         </div>
-    </div>
+    </nav>
 </header>
