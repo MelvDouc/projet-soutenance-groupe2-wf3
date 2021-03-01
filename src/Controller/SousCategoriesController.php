@@ -153,12 +153,4 @@ class SousCategoriesController extends AbstractController
         );
         return $this->redirectToRoute('admin_categories');
     }
-
-    /**
-     * @Route("", name="accessoir")
-     */
-    public function seeProducts()
-    {
-        
-    }
 }
