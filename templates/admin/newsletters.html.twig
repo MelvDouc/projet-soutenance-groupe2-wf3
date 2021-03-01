@@ -1,0 +1,32 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Newsletters{% endblock %}
+
+{% block body %}
+<h2 class="pb-5">Liste des Inscrits à la newsletter</h2>
+
+<table class="table table-bordered table-hover table-sm table-dark table-striped text-center">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for newsletter in newsletters %}
+            <tr>
+                <td class="align-middle">{{ loop.index }}</td>
+                <td class="align-middle">{{ newsletter.email }}</td>
+                <td class="align-middle">
+                    <a href="{{ path('newsletter_update', {'id':newsletter.id}) }}"><i class="fas fa-pen-square"></i></a> | 
+                    <a href="{{ path('newsletter_delete', {'id':newsletter.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                </td>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="text-right">
+    <a href="{{ path('newsletter_create') }}" class="btn btn-outline-dark">Ajouter un inscrit</a>
+</div>   
+
+{% endblock %}

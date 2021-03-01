@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
 {% block title %}Newsletter{% endblock %}
 
@@ -6,10 +6,9 @@
 
     <h1 class="text-center">Inscription - Newsletter</h1>
 
-    <div class="texte text-center mx-auto p-5">Afin de ne pas rater la sortie de nouvelle collection, de nos promotions et bien plus encore, inscrivez-vous à notre Newletter.</div>
     <div class="col-4 mx-auto mb-5 p-3 page-container">
-        {{ form_start(formulaireNewsletter) }}
-        {{ form_end(formulaireNewsletter) }}
+        {{ form_start(newsletterForm) }}
+        {{ form_end(newsletterForm) }}
     </div>
 
 {% endblock %}
