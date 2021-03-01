@@ -19,22 +19,18 @@ class SousCategoriesRepository extends ServiceEntityRepository
         parent::__construct($registry, SousCategories::class);
     }
 
-    // /**
-    //  * @return SousCategories[] Returns an array of SousCategories objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return SousCategories[] Returns an array of Categories objects
+     */
+    public function findByNom($value)
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
+        return $this->createQueryBuilder('fbn')
+            ->andWhere('fbn.nom = :val')
             ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
+            ->getOneOrNullResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?SousCategories

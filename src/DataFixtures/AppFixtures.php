@@ -385,7 +385,6 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
             $this->addReference('produit_' . $key, $produit);
         }
 
-    $manager->flush();
         $manager->flush();
     }
 

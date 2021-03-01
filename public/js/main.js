@@ -3,29 +3,9 @@ window.addEventListener('DOMContentLoaded', function () {
         registrationFormPseudo = document.querySelector('#registration_form_pseudo'),
         navULCategories = document.querySelectorAll('nav ul li');
 
-    function getPropValue(elem, prop) {
-        return parseFloat(window.getComputedStyle(elem).getPropertyValue(prop));
-    }
-
-    function equalizeHeights(elems) {
-        let heights = [];
-        Object.values(elems).forEach(elem => heights.push(getPropValue(elem, 'height')));
-        Object.values(elems).forEach(elem => elem.style.height = Math.max(...heights) + 'px');
-    }
-
-    equalizeHeights(footerCol4Uls);
-    window.addEventListener('resize', equalizeHeights(footerCol4Uls))
-
-    //
-
-    function equalizeWidths(elems) {
-        let childrenWidth = 100 / elems.length;
-        Object.values(elems).forEach(elem => elem.style.width = childrenWidth + '%');
-    }
-
-    equalizeWidths(navULCategories);
-
-    //
+    // function getPropValue(elem, prop) {
+    //     return parseFloat(window.getComputedStyle(elem).getPropertyValue(prop));
+    // }
 
     function generateRandomUsername() {
         let randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;

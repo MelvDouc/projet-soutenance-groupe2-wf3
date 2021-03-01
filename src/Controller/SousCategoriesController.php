@@ -13,6 +13,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SousCategoriesController extends AbstractController
 {
     /**
+     * @Route("/sous-categorie/football", name="souscategorie_football")
+     */
+    public function football(SousCategoriesRepository $sousCategoriesRepository)
+    {
+        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        return $this->render('sousCategories/sousCategoriesFootball.html.twig', [
+            'sousCategories' => $sousCategories
+        ]);
+    }
+
+    /**
+     * @Route("/sous-categorie/basketball", name="souscategorie_basketball")
+     */
+    public function basketball(SousCategoriesRepository $sousCategoriesRepository)
+    {
+        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        return $this->render('sousCategories/sousCategoriesBasketball.html.twig', [
+            'sousCategories' => $sousCategories
+        ]);
+    }
+
+    /**
      * @Route("/admin/sous-categorie/create", name="sous_categorie_create")
      */
     public function createSousCategorie(Request $request)

@@ -16,9 +16,22 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}{% endblock %} 
         
     </head>
+
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;        
+        }
+        .grid2 {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 20px;        
+            }
+    </style>
 
     <body class="col-12 mx-auto d-flex flex-column">
         {% include 'inc/header.inc.html.twig' %}
