@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     function setCategoryLinks() {
         for (link of headerNavLinks) {
-            let cat = link.parentElement.parentElement.getAttribute('aria-labelledBy').split('-')[0];
+            let cat = link.closest('ul').getAttribute('aria-labelledBy').split('-')[0];
             link.href = `/produits/${cat}/${link.innerText.toLowerCase()}`
         }
     }
