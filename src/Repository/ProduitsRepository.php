@@ -47,4 +47,16 @@ class ProduitsRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function products($cat, $sousCat)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.id_categories = :cat')
+            ->setParameter('cat', $cat)
+            ->andWhere('p.id_sous_categories = :sousCat')
+            ->setParameter('sousCat', $sousCat)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }
