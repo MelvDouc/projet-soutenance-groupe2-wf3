@@ -68,6 +68,7 @@ nav ul {
 
 nav li {
     /* Ne pas mettre de marge ! Ça fausse le centrage. */
+    text-align: center;
     cursor: pointer;
     transition: background-color .25s;
 }
@@ -88,7 +89,7 @@ nav a:hover {
 }
 
 @media screen and (max-width: 992px) {
-    nav {
+    nav ul {
         flex-direction: column;
     }
 }
