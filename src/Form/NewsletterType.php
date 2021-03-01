@@ -14,7 +14,7 @@ class NewsletterType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'required' => false,
+                'required' => true,
                 'attr' => [
                     'placeholder' => 'prenom.nom@domaine.com'
                 ]

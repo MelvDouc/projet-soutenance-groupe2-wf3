@@ -31,7 +31,7 @@ class SousCategoriesRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-
+    
     /*
     public function findOneBySomeField($value): ?SousCategories
     {
