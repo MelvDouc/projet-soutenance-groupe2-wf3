@@ -5,8 +5,29 @@
 {% block body %}
 
 
-    {% for produit in produits %}
-        <p>{{ produit.nom }}</p>
-    {% endfor %}
+    <div class="row d-flex justify-content-center">
+            {% for souscatproduit in produits %}
+                <div class="col-3">
+                    <div class="card h-100">
+                        <img src="{{ asset('img/produit/') ~ souscatproduit.img }}" alt="Image non disponible." class="card-img-top img-responsive">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ souscatproduit.nom }}</h2>
+                            <p class="card-text">{{ souscatproduit.description }}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Prix&thinsp;: {{ souscatproduit.prix }} €</li>
+                        </ul>
+                        <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
+                            <a href="{{ path('panier_ajout', {'id': souscatproduit.id }) }}" class="btn text-white" style="font-weight: bolder;">
+                                <i class="fas fa-shopping-cart mr-1"></i>
+                                Ajouter au panier
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
 
 {% endblock %}

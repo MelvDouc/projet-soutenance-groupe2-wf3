@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProduitController extends AbstractController
 {
     /**
-     * @Route("/tous-les-produits", name="produits")
+     * @Route("/tous-les-produits", name="tous_les_produits")
      */
     public function index(ProduitsRepository $produitsRepository): Response
     {
