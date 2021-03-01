@@ -3,6 +3,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+
     <div class="row d-flex justify-content-center flex-wrap">
         {% for sousCategorie in sousCategories %}
             <div class="col-5 pb-5 mb-5">
@@ -13,7 +14,7 @@
                     </div>
                 </div>
                     <div class="card-body text-center bg-secondary" style="font-weight: bolder;">
-                        <a href="{{ path('produits_souscategories', {'cat':'Basketball', 'sousCat':sousCategorie.nom}) }}" class="btn" style="font-weight: bolder;">Voir plus de détails</a>
+                        <a href="{{ path('produits_souscategories', {'cat':'Volleyball', 'sousCat':sousCategorie.nom}) }}" class="btn" style="font-weight: bolder;">Voir plus de détails</a>
                     </div>
                 </div>
         {% endfor %}

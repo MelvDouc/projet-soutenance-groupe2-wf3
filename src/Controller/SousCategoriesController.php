@@ -35,6 +35,28 @@ class SousCategoriesController extends AbstractController
     }
 
     /**
+     * @Route("/sous-categorie/handball", name="souscategorie_handball")
+     */
+    public function handball(SousCategoriesRepository $sousCategoriesRepository)
+    {
+        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        return $this->render('sousCategories/sousCategoriesHandball.html.twig', [
+            'sousCategories' => $sousCategories
+        ]);
+    }
+
+    /**
+     * @Route("/sous-categorie/volleyball", name="souscategorie_volleyball")
+     */
+    public function volleyball(SousCategoriesRepository $sousCategoriesRepository)
+    {
+        $sousCategories = $this->getDoctrine()->getRepository(SousCategories::class)->findAll();
+        return $this->render('sousCategories/sousCategoriesVolleyball.html.twig', [
+            'sousCategories' => $sousCategories
+        ]);
+    }
+
+    /**
      * @Route("/admin/sous-categorie/create", name="sous_categorie_create")
      */
     public function createSousCategorie(Request $request)
