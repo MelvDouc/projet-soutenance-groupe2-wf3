@@ -87,6 +87,12 @@ nav a:hover {
     color: #fff;
 }
 
+@media screen and (max-width: 992px) {
+    nav {
+        flex-direction: column;
+    }
+}
+
 /*  */
 /*  */
 
