@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Newsletter;
 use App\Form\NewsletterType;
 use App\Repository\NewsletterRepository;
+use App\Repository\CategoriesRepository;
+use App\Repository\SousCategoriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,8 +17,11 @@ class NewsletterController extends AbstractController
     /**
      * @Route("/newsletter", name="inscription_newsletter")
      */
-    public function index(Request $request, NewsletterRepository $newsletterRepository, \Swift_Mailer $mailer): Response
+    public function index(Request $request, NewsletterRepository $newsletterRepository, \Swift_Mailer $mailer, CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository): Response
     {
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
+        
         // $newsletter = new Newsletter();
 
         $formulaireNewsletter = $this->createForm(NewsletterType::class);
@@ -54,6 +59,8 @@ class NewsletterController extends AbstractController
 
         return $this->render('newsletter/newsletter.html.twig', [
             'formulaireNewsletter' => $formulaireNewsletter->createView(),
+            'categories' => $categories,
+            'sousCategories' => $sousCategories,
         ]);
     }
 

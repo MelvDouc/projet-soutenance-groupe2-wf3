@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Categories;
 use App\Form\CategorieType;
-use App\Repository\CategoriesRepository;
 use App\Entity\SousCategories;
+use App\Repository\CategoriesRepository;
 use App\Repository\SousCategoriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,10 +17,10 @@ class CategoriesController extends AbstractController
     /**
      * @Route("/admin/categories", name="admin_categories")
      */
-    public function index(CategoriesRepository $categoriesRepository, SousCategoriesRepository $souscategoriesRepository): Response
+    public function index(CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository): Response
     {
         $categories = $categoriesRepository->findAll();
-        $sousCategories = $souscategoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
         return $this->render('admin/categories.html.twig', [
             'categories' => $categories,
             'sousCategories' => $sousCategories,
