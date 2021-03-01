@@ -25,43 +25,35 @@ html, body {
 /*  */
 /*  */
 
-#head {
+header {
     background: #06f;
     background: var(--gradient1);
 }
 
-#head a {
+header a {
     text-decoration: none;
     color: #fff;
 }
 
-#head a:hover {
+header a:hover {
     color: gold;
 }
 
-#head .row > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#head h1 {
+header h1 {
     border: 1px solid #06f;
     border-radius: 5px;
     padding: .115em .5em;
     text-align: center;
+    width: fit-content;
 }
 
-#head h1:hover {
+header h1:hover {
     border-color: gold;
 }
 
-#head .col-3 {
+header .col-3 {
     padding: 0;
 }
-
-/*  */
-/*  */
 
 nav ul {
     display: grid;
@@ -70,7 +62,6 @@ nav ul {
 }
 
 nav li {
-    /* Ne pas mettre de marge ! Ça fausse le centrage. */
     text-align: center;
     cursor: pointer;
     transition: background-color .25s;
@@ -83,12 +74,15 @@ nav li:hover {
 nav a {
     text-transform: uppercase;
     padding: 1rem;
-    color: #000;
     text-align: center;
 }
 
 nav a:hover {
     color: #fff;
+}
+
+nav .dropdown button {
+    width: 100%;
 }
 
 /*  */

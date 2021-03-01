@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
-    const footerCol4Uls = document.querySelectorAll('footer .col-4 ul'),
-        registrationFormPseudo = document.querySelector('#registration_form_pseudo'),
-        navULCategories = document.querySelectorAll('nav ul li');
+    const registrationFormPseudo = document.querySelector('#registration_form_pseudo'),
+        headerNavLinks = document.querySelectorAll('header nav .dropdown a');
 
     // function getPropValue(elem, prop) {
     //     return parseFloat(window.getComputedStyle(elem).getPropertyValue(prop));
@@ -22,5 +21,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //
 
+    function setCategoryLinks() {
+        for (link of headerNavLinks) {
+            let cat = link.parentElement.parentElement.getAttribute('aria-labelledBy').split('-')[0];
+            link.href = `/produits/${cat}/${link.innerText.toLowerCase()}`
+        }
+    }
 
+    setCategoryLinks();
 })
