@@ -25,6 +25,29 @@ html, body {
 /*  */
 /*  */
 
+@media screen and (max-width: 992px) {
+    #icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: .5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    footer li {
+        font-size: .8em;
+    }
+
+    footer h3 {
+        font-size: .9em;
+    }
+}
+
+/*  */
+/*  */
+
 #head {
     background: #06f;
     background: var(--gradient1);
@@ -49,6 +72,7 @@ html, body {
     border: 1px solid #06f;
     border-radius: 5px;
     padding: .115em .5em;
+    text-align: center;
 }
 
 #head h1:hover {
@@ -86,12 +110,6 @@ nav a {
 
 nav a:hover {
     color: #fff;
-}
-
-@media screen and (max-width: 992px) {
-    nav ul {
-        flex-direction: column;
-    }
 }
 
 /*  */
