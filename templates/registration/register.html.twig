@@ -22,12 +22,14 @@
                 
             <div class="row mb-3">
                 {{ form_row(registrationForm.plainPassword, {
-                    label: 'Password'
+                    label: 'Mot de passe'
                 }) }}
             </div>
             
             <div class="row mb-3">
-                {{ form_row(registrationForm.agreeTerms) }}
+                {{ form_row(registrationForm.agreeTerms, {
+                    label: "J'accepte les conditions d'utilisation."
+                }) }}
             </div>
 
             <div class="mb-3">
