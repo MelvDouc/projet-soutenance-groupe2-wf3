@@ -19,22 +19,18 @@ class CategoriesRepository extends ServiceEntityRepository
         parent::__construct($registry, Categories::class);
     }
 
-    // /**
-    //  * @return Categories[] Returns an array of Categories objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Categories[] Returns an array of Categories objects
+     */
+    public function findByNom($value)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+        return $this->createQueryBuilder('fbn')
+            ->andWhere('fbn.nom = :val')
             ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
+            ->getOneOrNullResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Categories
