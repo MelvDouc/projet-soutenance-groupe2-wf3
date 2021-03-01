@@ -13,57 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SousCategoriesController extends AbstractController
 {
-    /**
-     * @Route("/sous-categorie/football", name="souscategorie_football")
-     */
-    public function football(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
-    {
-        $categories = $categoriesRepository->findAll();
-        $sousCategories = $sousCategoriesRepository->findAll();
-        return $this->render('sousCategories/sousCategoriesFootball.html.twig', [
-            'categories' => $categories,
-            'sousCategories' => $sousCategories
-        ]);
-    }
-
-    /**
-     * @Route("/sous-categorie/basketball", name="souscategorie_basketball")
-     */
-    public function basketball(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
-    {
-        $categories = $categoriesRepository->findAll();
-        $sousCategories = $sousCategoriesRepository->findAll();
-        return $this->render('sousCategories/sousCategoriesBasketball.html.twig', [
-            'categories' => $categories,
-            'sousCategories' => $sousCategories
-        ]);
-    }
-
-    /**
-     * @Route("/sous-categorie/handball", name="souscategorie_handball")
-     */
-    public function handball(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
-    {
-        $categories = $categoriesRepository->findAll();
-        $sousCategories = $sousCategoriesRepository->findAll();
-        return $this->render('sousCategories/sousCategoriesHandball.html.twig', [
-            'categories' => $categories,
-            'sousCategories' => $sousCategories
-        ]);
-    }
-
-    /**
-     * @Route("/sous-categorie/volleyball", name="souscategorie_volleyball")
-     */
-    public function volleyball(CategoriesRepository $categoriesRepository,SousCategoriesRepository $sousCategoriesRepository)
-    {
-        $categories = $categoriesRepository->findAll();
-        $sousCategories = $sousCategoriesRepository->findAll();
-        return $this->render('sousCategories/sousCategoriesVolleyball.html.twig', [
-            'categories' => $categories,
-            'sousCategories' => $sousCategories
-        ]);
-    }
 
     /**
      * @Route("/admin/sous-categorie/create", name="sous_categorie_create")
