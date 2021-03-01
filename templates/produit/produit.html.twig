@@ -7,27 +7,31 @@
 {% endblock %}
 
 {% block body %}
-
-<div class="row">
-    {% for produit in produits %}
-        <div class="col-4 mt-4">
-            <div class="border border-dark rounded p-2 clearfix" style="height: 65em;">
-                <h1>{{ produit.nom }}</h1>
-
-                <img src="{{ asset('img/produit/') ~ produit.img }}" alt="Image non disponible." class="img-fluid img-responsive">
-
-                <p>{{ produit.description }}</p>
-
-                <p>Prix&thinsp;: {{ produit.prix }} €</p>
-
-                <div>
-                    <a href="{{ path('panier_ajout', {'id': produit.id }) }}" class="btn btn-success">
-                        <i class="fas fa-shopping-cart mr-1"></i>
-                        Ajouter au panier
-                    </a>
+<div class="container-fluid content-row">
+<div class="row p-5">
+        {% for produit in produits %}
+            <div class="pb-5 col-sm-12 col-lg-3">
+                <div class="card h-100">
+                    <img src="{{ asset('img/produit/') ~ produit.img }}" alt="Image non disponible." class="card-img-top" style="height: 450px;">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ produit.nom }}</h2>
+                        <p class="card-text">{{ produit.description }}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Prix&thinsp;: {{ produit.prix }} €</li>
+                    </ul>
+                    <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
+                        <a href="{{ path('panier_ajout', {'id': produit.id }) }}" class="btn text-white" style="font-weight: bolder;">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Ajouter au panier
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>
+</div>
+
+
 {% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="grid">
+        {% for sousCategorie in sousCategories %}
+            <div class="card mb-5">
+                <div class="card-body">
+                    <img class="card-img-top" style="height: 450px;" src="{{ asset('img/2-sous-categories/BasketBall/' ~ sousCategorie.img) }}" alt="Image non disponible." class="img-fluid img-responsive">
+                    <h2 class="card-title text-center">{{ sousCategorie.nom }}</h2>
+                </div>
+                <div class="card-body text-center bg-secondary" style="font-weight: bolder;">
+                    <a href="" class="btn" style="font-weight: bolder;">Voir plus de détails</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
