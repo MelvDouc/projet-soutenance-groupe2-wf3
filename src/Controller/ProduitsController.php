@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProduitsController extends AbstractController
 {
     /**
-     * @Route("/{cat}/{sousCat}", name="produits_souscategories")
+     * @Route("/sous-categorie/{cat}/{sousCat}", name="produits_souscategories")
      */
     public function index(CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository, ProduitsRepository $produitsRepository, $cat, $sousCat): Response
     {

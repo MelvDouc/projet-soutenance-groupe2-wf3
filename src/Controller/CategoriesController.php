@@ -15,16 +15,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CategoriesController extends AbstractController
 {
     /**
-     * @Route("/{cat}", name="categories")
+     * @Route("/categorie/{cat}", name="categories")
      */
     public function index(CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository, $cat): Response
     {
         $categories = $categoriesRepository->findAll();
         $sousCategories = $sousCategoriesRepository->findAll();
-        $catNom = $categoriesRepository->findByNom($cat)->getNom();
+        // $catNom = $categoriesRepository->findByNom($cat)->getNom();
 
         return $this->render('categories/index.html.twig', [
-            'cat' => $catNom,
+            'cat' => $cat,
             'categories' => $categories,
             'sousCategories' => $sousCategories,
         ]);
