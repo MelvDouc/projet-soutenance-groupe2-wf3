@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use App\Repository\CategoriesRepository;
+use App\Repository\SousCategoriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,8 +15,11 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request, \Swift_Mailer $mailer): Response
+    public function index(Request $request, \Swift_Mailer $mailer, CategoriesRepository $categoriesRepository, SousCategoriesRepository $sousCategoriesRepository): Response
     {
+        $categories = $categoriesRepository->findAll();
+        $sousCategories = $sousCategoriesRepository->findAll();
+
         $formulaireContact = $this->createForm(ContactType::class);
         $formulaireContact->handleRequest($request);
 
@@ -49,6 +54,8 @@ class ContactController extends AbstractController
 
         return $this->render('contact/contact.html.twig', [
             'formulaireContact' => $formulaireContact->createView(),
+            'categories' => $categories,
+            'sousCategories' => $sousCategories,
         ]);
     }
 }

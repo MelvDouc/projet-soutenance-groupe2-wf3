@@ -7,90 +7,30 @@
                 </a>
             </div>
         </div>
+        
         <div class="col-6 d-flex align-items-center">
             <div class="col-9 mx-auto">
                 <nav class="navbar navbar-expand navbar-lg p-0 w-100 d-flex justify-content-center">
                     <ul class="p-0 m-0 w-100">
+                        {% for categorie in categories %}
                         <li class="nav-item">
                             <div class="dropdown">
-                                <button class="btn text-light text-uppercase" type="button" id="football-dropdown" data-bs-toggle="dropdown" aria-expanded="false">Football</button>
-                                <ul class="dropdown-menu" aria-labelledby="football-dropdown">
+                                <button class="btn text-light text-uppercase dropdown-toggle" type="button" id="{{ categorie.nom }}-dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ categorie.nom }}</button>
+                                <ul class="dropdown-menu" aria-labelledby="{{ categorie.nom }}-dropdown">
+                                    {% for sousCategorie in sousCategories %}
                                     <li>
-                                        <a href="" class="dropdown-item">Ballons</a>
+                                        <a class="dropdown-item" href="{{ path('produits_souscategories', {'cat': categorie.nom,'sousCat': sousCategorie.nom}) }}">{{ sousCategorie.nom }}</a>
                                     </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Maillots</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Chaussures</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Sacs</a>
-                                    </li>
+                                    {% endfor %} 
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button class="btn text-light text-uppercase" type="button" id="basketball-dropdown" data-bs-toggle="dropdown" aria-expanded="false">basketball</button>
-                                <ul class="dropdown-menu" aria-labelledby="basketball-dropdown">
-                                    <li>
-                                        <a href="" class="dropdown-item">Ballons</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Maillots</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Chaussures</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Sacs</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button class="btn text-light text-uppercase" type="button" id="handball-dropdown" data-bs-toggle="dropdown" aria-expanded="false">handball</button>
-                                <ul class="dropdown-menu" aria-labelledby="handball-dropdown">
-                                    <li>
-                                        <a href="" class="dropdown-item">Ballons</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Maillots</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Chaussures</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Sacs</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button class="btn text-light text-uppercase" type="button" id="volleyball-dropdown" data-bs-toggle="dropdown" aria-expanded="false">Volleyball</button>
-                                <ul class="dropdown-menu" aria-labelledby="volleyball-dropdown">
-                                    <li>
-                                        <a href="" class="dropdown-item">Ballons</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Maillots</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Chaussures</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="dropdown-item">Sacs</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        {% endfor %}  
                     </ul>
                 </nav>
             </div>
         </div>
+
         <div class="col-3 d-flex justify-content-center align-items-center">
             <div class="fs-2" id="icons">
                 <a href="{{ path('app_login') }}" title="Connexion">

@@ -39,6 +39,10 @@ header a:hover {
     color: gold;
 }
 
+nav a{
+    color: rgb(54, 54, 54);
+}
+
 header h1 {
     border: 1px solid #06f;
     border-radius: 5px;
@@ -145,25 +149,14 @@ footer i[class*="youtube"]:hover {
     align-items: center;    
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-}
+/*  */
+/*  */
 
-.cards .card {
-    margin-right: 20px;
-    cursor: pointer;
+.cards-container-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
 }
-
-.cards .card img {
-    width: 350px;
-}
-
-.cards .card .card-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-} 
 
 #accueil-categories .row {
     margin-bottom: 1.5em;
@@ -195,13 +188,6 @@ footer i[class*="youtube"]:hover {
 
 /*  */
 /*  */
-
-/* .contact-form-div {
-    border: 1px solid #000;
-    border-radius: 5px 20px;
-    box-shadow: .25rem 0.75rem 0.75rem;
-    background-color: rgba(175, 175, 175, 0.475);
-} */
 
 .contact-form-div div.form-group {
     margin-bottom: .5em;
@@ -275,11 +261,19 @@ label[for='newsletter_email'] {
         grid-template-columns: 1fr;
     }
 
+    nav .dropdown > button {
+        padding: .15em;
+    }
+
     footer li {
         font-size: .8em;
     }
 
     footer h3 {
         font-size: .9em;
+    }
+
+    .cards-container-3 {
+        grid-template-columns: 1fr;
     }
 }
