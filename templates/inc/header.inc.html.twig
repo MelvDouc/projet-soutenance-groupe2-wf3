@@ -19,7 +19,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="{{ categorie.nom }}-dropdown">
                                     {% for sousCategorie in sousCategories %}
                                     <li>
-                                        <a href="{{ path('produits_souscategories', {'cat': categorie.nom,'sousCat': sousCategorie.nom}) }}">{{ sousCategorie.nom }}</a>
+                                        <a class="dropdown-item" href="{{ path('produits_souscategories', {'cat': categorie.nom,'sousCat': sousCategorie.nom}) }}">{{ sousCategorie.nom }}</a>
                                     </li>
                                     {% endfor %} 
                                 </ul>
