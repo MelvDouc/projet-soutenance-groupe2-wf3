@@ -257,6 +257,10 @@ label[for='newsletter_email'] {
         grid-template-columns: 1fr;
     }
 
+    nav .dropdown > button {
+        padding: .15em;
+    }
+
     footer li {
         font-size: .8em;
     }
