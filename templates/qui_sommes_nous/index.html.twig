@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes-nous?{% endblock %}
+
+{% block body %}
+
+<div class="wrapper">
+    <h1 class="text-center">Qui sommes-nous?</h1>
+    <h2 class="text-center">L'équipe:</h2>
+
+    <div class="container-fluid content-row">
+        <div class="row p-5">
+            <!-- ajouter un membre: -->
+            {# <div class="pb-5 col-sm-12 col-lg-6">
+                <div class="card h-100 ">
+                    <img src="{{ asset('img/equipe/') ~ 'photo-membre.jpg' }}" alt="Nom Membre" class="card-img-top thumb-post" style="height: 450px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Nom Membre</h2>
+                        <p class="card-text overflow-auto">Description membre</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            Parties affectuées :
+                            <ul>
+                                <li>partie 1</li>
+                                <li>partie 2</li>
+                                <li>...</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
+                        <a href="mailto:email@du.membre" class="btn text-white" style="font-weight: bolder;">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Contacter
+                        </a>
+                    </div>
+                </div>
+            </div> #}
+
+            <!-- François  -->
+            <div class="pb-5 col-sm-12 col-lg-6">
+                <div class="card h-100 ">
+                    <img src="{{ asset('img/equipe/') ~ 'francois.jpg' }}" alt="François BANITZ" class="card-img-top thumb-post" style="height: 450px;">
+                    <div class="card-body">
+                        <h2 class="card-title">François BANITZ</h2>
+                        <!-- <p class="card-text overflow-auto">Description membre</p> -->
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            Parties affectuées :
+                            <ul>
+                                <li>page administeur (gestion du site, accès à la base de donnée)</li>
+                                <li>CRUD des tables </li>
+                                <li>inscription & connexion utilisateurs </li>
+                                <li>affichage automatisé des catégories et sous-catégorie</li>
+                                <li>ajout des données définitives dans la base de données</li>
+                                <li>plan d'accès au magasin</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
+                        <a href="mailto:banitz.francois@gmail.com" class="btn text-white" style="font-weight: bolder;">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Contacter
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <h2 class="text-center">Le projet:</h2>
+
+    <p> Ce site à été créé en février 2021 dans le cadre d'un projet de fin de parcours à l'école <a href="https://www.wf3.fr/" target="_blank">Webforce 3</a> </p>
+    <p> Le but était de mettre en place un site de vente d'articles de sport </p>
+</div>
+{% endblock %}
