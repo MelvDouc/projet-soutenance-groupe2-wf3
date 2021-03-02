@@ -6,7 +6,7 @@
 
 <div class="col-6 mx-auto">
 
-    <div class="card mb-5">
+    <div class="card h-100 mb-5">
         <img src="{{ asset('img/produit/') ~ produit.img }}" alt="Image non disponible." class="card-img-top">
         <div class="card-body">
             <h2 class="card-title">{{ produit.nom }}</h2>
@@ -15,9 +15,11 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Prix&thinsp;: {{ produit.prix }}&thinsp;€</li>
         </ul>
-        <a href="{{ path('panier_ajout', {'id': produit.id }) }}" class="btn btn-success text-white" style="font-weight: bolder;">
-            <i class="fas fa-shopping-cart mr-1"></i>
-            Ajouter au panier
+        <a href="{{ path('panier_ajout', {'id': produit.id }) }}">
+            <button class="btn btn-success w-100 text-white fw-bolder">
+                <i class="fas fa-shopping-cart mr-1"></i>
+                Ajouter au panier
+            </button>
         </a>
     </div>
 </div>

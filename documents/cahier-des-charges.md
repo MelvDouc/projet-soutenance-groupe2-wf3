@@ -44,6 +44,7 @@
     * Qui sommes-nous, mentions légales, etc.
 - Choix des technologies; Pourquoi avoir ce projet en sachant qu'on devait le faire avec Symfony ?
     * Bootstrap pour le côté responsive et le gain de temps obtenu par le fait qu'une partie de la mise en page soit déjà faite.
+    * Google Fonts nous a founi des polices supplémentaires en adéquation avec le style général du site.
     * JavaScript permet de compléter la mise en page là où le CSS n'est pas suffisant et également d'ajouter quelques fonctionnalités qui améliore l'expérience utilisateur.
     * Symfony simplifie l'ajout de nouvelles fonctionnalités et la cohésion de celles-ci.
 - contraintes techniques :
@@ -63,4 +64,4 @@
     * Espace admin (gestion des produits, catégories, etc.)
     * Formulaire d'informations de livraison et paiement
     * Notifications par mail lors de l'inscription à la newsletter
-    * (Plan d'accès 1 magasin)
+    * Plan d'accès au magasin

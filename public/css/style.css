@@ -60,7 +60,6 @@ header a:hover {
     color: #fff;
     border: 1px solid;
     border-radius: 5px;
-    font-family: 'Orbitron', 'Saira', Verdana, Geneva, Tahoma, sans-serif;
     transition: color .5s;
 }
 
@@ -83,7 +82,7 @@ header a:hover {
 
 footer {
     font-family: 'Shippori Mincho', 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 50vh;
+    margin-top: 33.33vh;
 }
 
 footer ul {
@@ -165,7 +164,7 @@ footer i[class*="youtube"]:hover {
 }
 
 #accueil-categories a {
-    margin-bottom: .85em;
+    margin-bottom: .5em;
 }
 
 #accueil-categories img {
@@ -214,14 +213,6 @@ label[for="contact_fichier"] {
     font-size: large;
 }
 
-/*  */
-/*  */
-
-.bg-gray1 {
-    background: rgb(194,194,194);
-    background: var(--gradient2);
-}
-
 /* PAGE NEWSLETTER */
 
 #newsletter_envoyer {
@@ -237,6 +228,12 @@ label[for='newsletter_email'] {
 }
 
 /*  */
+/*  */
+
+.fw-orbitron {
+    font-family: 'Orbitron', 'Saira', Verdana, Geneva, Tahoma, sans-serif;
+}
+
 /*  */
 /*  */
 

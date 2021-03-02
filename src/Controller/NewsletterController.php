@@ -58,7 +58,7 @@ class NewsletterController extends AbstractController
             );
             
             
-            return $this->redirectToRoute('home');   
+            return $this->redirectToRoute('inscription_newsletter');   
         }
 
         return $this->render('newsletter/newsletter.html.twig', [

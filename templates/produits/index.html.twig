@@ -6,23 +6,23 @@
 
     <div class="cards-container-3 mx-3 mb-5">
             {% for souscatproduit in produits %}
-                <div class="card mb-3">
+            <div class="card h-100 mb-3">
                     <a href="{{ path('voir_produit', {'id': souscatproduit.id }) }}">
                         <img src="{{ asset('img/produit/') ~ souscatproduit.img }}" alt="Image non disponible." class="card-img-top img-responsive">
-                        <div class="card-body">
+                    </a>
+                    <div class="card-body">
                             <h2 class="card-title">{{ souscatproduit.nom }}</h2>
-                            <p class="card-text mb-4">{{ souscatproduit.description | raw }}</p>
+                            <p class="card-text overflow-auto mb-4">{{ souscatproduit.description | raw }}</p>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Prix&thinsp;: {{ souscatproduit.prix }} €</li>
                         </ul>
-                        <div class="text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
-                            <a href="{{ path('panier_ajout', {'id': souscatproduit.id }) }}" class="btn text-white" style="font-weight: bolder;">
+                        <a href="{{ path('panier_ajout', {'id': souscatproduit.id }) }}">
+                            <button class="btn btn-success w-100 text-white fw-bolder">
                                 <i class="fas fa-shopping-cart mr-1"></i>
                                 Ajouter au panier
-                            </a>
-                        </div>
-                    </a>
+                            </button>
+                        </a>
                 </div>
                 {% endfor %}
         </div>
