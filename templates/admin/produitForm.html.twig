@@ -8,11 +8,14 @@
     {{ form_start(produitForm) }}
         <h2 class="pb-5">Formulaire - Produit</h2>
 
+        
+        <!-- Nom -->
         <div class="col-4 my-3">
             {{ form_label(produitForm.nom) }}
             {{ form_widget(produitForm.nom) }}
         </div>
 
+        <!-- Catégorie -->
         <div class="col-4 my-3">
             {{ form_label(produitForm.id_categories) }}
             {{ form_widget(produitForm.id_categories) }}
@@ -24,6 +27,7 @@
             </a>
         </div>
 
+        <!-- Sous-catégorie -->
         <div class="col-4 my-3">
             {{ form_label(produitForm.id_sous_categories) }}
             {{ form_widget(produitForm.id_sous_categories) }}
@@ -35,22 +39,26 @@
             </a>
         </div>
         
+        <!-- Description -->
         <div class="col-12 my-3">
             {{ form_label(produitForm.description) }}
             {{ form_widget(produitForm.description) }}
         </div>
 
+        <!-- Image -->
         <div class="col-4 my-3">
             {{ form_label(produitForm.img) }}
             {{ form_widget(produitForm.img) }}
             {{ form_help(produitForm.img) }}
         </div>
         
+        <!-- Prix -->
         <div class="col-3 my-3">
             {{ form_label(produitForm.prix ) }}
             {{ form_widget(produitForm.prix ) }}
         </div>
         
+        <!-- Retour / Validation -->
         <div class="text-right">
             <a href="{{ path('admin_produits') }}" class="btn btn-outline-light text-dark">Retour</a> 
             {{ form_widget(produitForm.valider )}}

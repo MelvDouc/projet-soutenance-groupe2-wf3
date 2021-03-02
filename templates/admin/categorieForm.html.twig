@@ -7,16 +7,19 @@
 
 {{ form_start(categorieForm) }}
 
+  <!-- Nom -->
   <div class="col-4 my-3">
     {{ form_label(categorieForm.nom) }}
     {{ form_widget(categorieForm.nom) }}
   </div>
 
+  <!-- Image -->
   <div class="col-4 my-3">
     {{ form_label(categorieForm.img) }}
     {{ form_widget(categorieForm.img) }}
   </div>
 
+  <!-- Retour / Validation -->
   <div class="text-right">
     <a href="{{ path('admin_categories') }}" class="btn btn-outline-light text-dark">Retour</a> 
     {{ form_widget(categorieForm.valider )}}

@@ -16,19 +16,19 @@ class SousCategoriesFixtures extends Fixture
         $souscategories = [
             1 => [
                 'nom' => 'Ballons',
-                'img' => '/ballon-football.jpg'
+                'img' => '1614698263.jpg'
             ],
             2 => [
                 'nom' => 'Maillots',
-                'img' => 'maillot-football.jpg'
+                'img' => '1614699039.jpg'
             ],
             3 => [
                 'nom' => 'Chaussures',
-                'img' => 'chaussures-football.jpg'
+                'img' => '1614699260.jpg'
             ],
             4 => [
                 'nom' => 'Accessoires',
-                'img' => 'sac-adidas.jpg'
+                'img' => '1614699489.jpg'
             ],
             
         ];

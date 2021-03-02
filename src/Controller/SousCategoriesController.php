@@ -88,7 +88,7 @@ class SousCategoriesController extends AbstractController
      */
     public function updateSousCategorie(SousCategoriesRepository $souscategoriesRepository, $id, Request $request)
     {
-        $sousCategorie = $souscategoriesRepository->find($id);
+        $sous_categorie = $souscategoriesRepository->find($id);
         $form = $this->createForm(SousCategorieType::class, $sous_categorie);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
@@ -111,7 +111,7 @@ class SousCategoriesController extends AbstractController
                     'Une erreur est survenue lors de l\'édition de la sous-categorie'
                 );
             }
-            return $this->redirectToRoute('admin_sous_categories');
+            return $this->redirectToRoute('admin_categories');
         }
         return $this->render('admin/sousCategorieForm.html.twig', [
             'sousCategorieForm' => $form->createView()
