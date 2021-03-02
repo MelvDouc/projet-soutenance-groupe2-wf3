@@ -242,6 +242,10 @@ label[for='newsletter_email'] {
 
 @media screen and (max-width: 992px) {
    
+    .navbar {
+        flex-wrap: nowrap;
+    }
+
     .navbar-brand {
         margin: 0;
     }
