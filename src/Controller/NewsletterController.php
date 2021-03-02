@@ -37,7 +37,7 @@ class NewsletterController extends AbstractController
         
 
             $mail = (new \Swift_Message('Inscription à la Newsletter'))
-                ->setFrom('contact.elibird@gmail.com')
+                ->setFrom('wfsport.contact@gmail.com')
                 ->setTo($formulaireNewsletter->get('email')->getData())
                 ->setBody(
                     $this->renderView(
