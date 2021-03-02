@@ -15,6 +15,19 @@
 banitz.francois@gmail.com
 
 ## Melvin DOUCET
+***
+
+## Wassim
+
+### Qui est-tu?
+
+### Parties affectuées :
+
+### Email
+
+***
+
+## Melvin DOUCET
 
 ### Qui est-tu?
 
@@ -26,3 +39,14 @@ banitz.francois@gmail.com
 * page d'affichage d'un produit
 ### Email
 melv.douc@gmail.com
+
+***
+
+## Matthieu
+
+### Qui est-tu?
+
+### Parties affectuées :
+
+### Email
+
