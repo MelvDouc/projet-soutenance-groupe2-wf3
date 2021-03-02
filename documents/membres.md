@@ -13,3 +13,34 @@
 * plan d'accès au magasin
 ### Email
 banitz.francois@gmail.com
+
+***
+
+## Melvin
+
+### Qui est-tu?
+
+### Parties affectuées :
+
+### Email
+
+***
+
+## Wassim
+
+### Qui est-tu?
+
+### Parties affectuées :
+
+### Email
+
+***
+
+## Matthieu
+
+### Qui est-tu?
+
+### Parties affectuées :
+
+### Email
+
