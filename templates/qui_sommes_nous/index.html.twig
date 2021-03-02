@@ -20,7 +20,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            Parties affectuées :
+                            Parties effectuées :
                             <ul>
                                 <li>partie 1</li>
                                 <li>partie 2</li>
@@ -47,11 +47,11 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            Parties affectuées :
+                            Parties effectuées :
                             <ul>
                                 <li>page administeur (gestion du site, accès à la base de donnée)</li>
                                 <li>CRUD des tables </li>
-                                <li>inscription & connexion utilisateurs </li>
+                                <li>inscription &amp; connexion utilisateurs </li>
                                 <li>affichage automatisé des catégories et sous-catégorie</li>
                                 <li>ajout des données définitives dans la base de données</li>
                                 <li>plan d'accès au magasin</li>
@@ -78,7 +78,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            Parties affectuées :
+                            Parties effectuées :
                             <ul>
                                 <li>création de la base de données</li>
                                 <li>page contact avec envoi d'email automatique</li>
@@ -98,30 +98,63 @@
                 </div>
             </div>
 
+            <div class="pb-5 col-sm-12 col-lg-6">
+                <div class="card h-100 ">
+                    <img src="{{ asset('img/equipe/') ~ 'Melvin.jpg' }}" alt="Nom Membre" class="card-img-top thumb-post" style="height: 450px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Melvin DOUCET</h2>
+                        <p class="card-text overflow-auto">Description membre</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            Parties effectuées :
+                            <ul>
+                                <li>Pages de produit individuel</li>
+                                <li>Page d'accueil, header et footer</li>
+                                <li>Front-end du site (avec Bootstrap)</li>
+                                <li>JavaScript : génération de suggestions de pseudonymes aléatoires dans les formulaires</li>
+                                <li>Recherche d'images libres de droits pour les fixtures</li>
+                                <li>Mise en forme des pages de texte (mentions légales, conditions générales d'utilisation, etc.)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
+                        <a href="mailto:email@du.membre" class="btn text-white" style="font-weight: bolder;">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Contacter
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <h2 class="text-center">Le projet:</h2>
+    <div class="container">
 
-    <p> Ce site à été créé en février 2021 dans le cadre d'un projet de fin de parcours à l'école <a href="https://www.wf3.fr/" target="_blank">Webforce 3</a> </p>
-    <p>Dans le cadre de notre projet de soutenance, nous avons créé ce <strong>site de vente d'articles de sport</strong> spécialisé dans les sports de ballon tels que le football, le basketball, le volleyball et le handball. Le site permet de sélectionner de commander des produits rangés par catégories (sports) et sous-catégories (ballons, maillots, chaussures et accessoires) en les ajoutant à un panier avant de valider la commande. <br> Le site est entièrement configurable par le gérant du magasin.</p>
-    <h3>Technologies</h3>
-
-    <p>Notre principal outil de création a été le framework PHP <strong>Symfony</strong> version 5 grâce auquel nous avons pu générer facilement des fonctionnalités diverses et variées telles que des formulaires d'inscription, de connexion et de contact ainsi que tout un espace réservé à l'administrateur pour la gestion des produits disponibles et et des comptes d'utilisateur.</p>
-
-    <p>Nous avons également eu recours à <strong>Git et Github</strong> afin de travailler sur un projet commun en partageant nos modifications individuelles.</p>
-
-    <p>L'aspect front-end du site a été réalisé au moyen de la librairie CSS <strong>Bootstrap</strong>, laquelle a grandement facilité la mise en place d'un visuel responsive et riche en style.</p>
-
-    <p>Les polices d'écriture utilisées proviennent d'une part de Bootstrap et d'autre part du catalogue de polices libres de droits de <strong>Google Fonts</strong>.</p>
-
-    <p>Certaines fonctionnalités, telles que la génération de suggestion de noms d'utilisateur aléatoires dans les formulaires, ont été réalisées en <strong>JavaScript</strong>. Aucun framework ni aucune librairie de ce langage n'ont été nécessaires.</p>
-
-    <h3>Public cible</h3>
-
-    <p>Toute personne, homme ou femme, plus jeune ou plus âgée, intéressée par le sport et désireuse d'acquérir des accessoires utiles à la pratique de l'activité physique peut trouver son bonheur sur notre site.</p>
-
-    <p>En ces périodes de mobilité restreinte, l'e-commerce est présent pour fournir au consommateur les articles de loisir auquel il n'aurait que difficilement accès autrement.</p>
+        <h2 class="text-center mb-3">Le projet:</h2>
+        
+        <p> Ce site à été créé en février 2021 dans le cadre d'un projet de fin de parcours à l'école <a href="https://www.wf3.fr/" target="_blank">Webforce 3</a> </p>
+        <p>Dans le cadre de notre projet de soutenance, nous avons créé ce <strong>site de vente d'articles de sport</strong> spécialisé dans les sports de ballon tels que le football, le basketball, le volleyball et le handball. Le site permet de sélectionner de commander des produits rangés par catégories (sports) et sous-catégories (ballons, maillots, chaussures et accessoires) en les ajoutant à un panier avant de valider la commande. <br> Le site est entièrement configurable par le gérant du magasin.</p>
+        <h3>Technologies</h3>
+        
+        <p>Notre principal outil de création a été le framework PHP <strong>Symfony</strong> version 5 grâce auquel nous avons pu générer facilement des fonctionnalités diverses et variées telles que des formulaires d'inscription, de connexion et de contact ainsi que tout un espace réservé à l'administrateur pour la gestion des produits disponibles et et des comptes d'utilisateur.</p>
+        
+        <p>Nous avons également eu recours à <strong>Git et Github</strong> afin de travailler sur un projet commun en partageant nos modifications individuelles.</p>
+        
+        <p>L'aspect front-end du site a été réalisé au moyen de la librairie CSS <strong>Bootstrap</strong>, laquelle a grandement facilité la mise en place d'un visuel responsive et riche en style.</p>
+        
+        <p>Les polices d'écriture utilisées proviennent d'une part de Bootstrap et d'autre part du catalogue de polices libres de droits de <strong>Google Fonts</strong>.</p>
+        
+        <p>Certaines fonctionnalités, telles que la génération de suggestion de noms d'utilisateur aléatoires dans les formulaires, ont été réalisées en <strong>JavaScript</strong>. Aucun framework ni aucune librairie de ce langage n'ont été nécessaires.</p>
+        
+        <h3>Public cible</h3>
+        
+        <p>Toute personne, homme ou femme, plus jeune ou plus âgée, intéressée par le sport et désireuse d'acquérir des accessoires utiles à la pratique de l'activité physique peut trouver son bonheur sur notre site.</p>
+        
+        <p>En ces périodes de mobilité restreinte, l'e-commerce est présent pour fournir au consommateur les articles de loisir auquel il n'aurait que difficilement accès autrement.</p>
+    
+    </div>
 
 </div>
 {% endblock %}
