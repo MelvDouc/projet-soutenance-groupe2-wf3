@@ -13,3 +13,16 @@
 * plan d'accès au magasin
 ### Email
 banitz.francois@gmail.com
+
+## Melvin DOUCET
+
+### Qui est-tu?
+
+### Parties affectuées :
+
+* page d'accueil, header et footer
+* CSS de tout le site
+* gestion du JavaScript
+* page d'affichage d'un produit
+### Email
+melv.douc@gmail.com
