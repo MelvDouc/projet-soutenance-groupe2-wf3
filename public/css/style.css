@@ -79,6 +79,7 @@ header a:hover {
 
 footer {
     font-family: 'Shippori Mincho', 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 50vh;
 }
 
 footer ul {
