@@ -42,7 +42,7 @@ class PaiementController extends AbstractController
                 'success',
                 'Votre paiement a bien été pris en compte'
             );
-            return $this->redirectToRoute('paiement');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('paiement/index.html.twig', [
