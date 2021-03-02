@@ -73,6 +73,10 @@ header a:hover {
     font-size: 2rem;
 }
 
+.card img {
+    object-fit: cover; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+}
 
 /*  */
 /*  */
