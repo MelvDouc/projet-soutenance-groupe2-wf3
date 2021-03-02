@@ -11,4 +11,5 @@
 * affichage automatisé des catégories et sous-catégorie
 * ajout des données définitives dans la base de données
 * plan d'accès au magasin
-* banitz.francois@gmail.com
+### Email
+banitz.francois@gmail.com
