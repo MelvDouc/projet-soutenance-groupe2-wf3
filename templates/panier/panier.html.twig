@@ -4,23 +4,25 @@
 
 {% block body %}
     <div>
-        <h2 class="col-6 offset-3 text-center bg-success text-white">Votre panier</h2>
+        <h2 class="text-center">Votre panier</h2>
     </div>
 
-    <div class="col-6 offset-3 p-5">
-    {% if mesProduits | length > 0 %}
-        <table class="table col-11 p-5">
-            <thead>
-                <tr>
-                    <th class="text-center">Produit</th>
-                    <th class="text-center">Prix</th>
-                    <th class="text-center">Quantité</th>
-                    <th class="text-center">Total</th>
-                    <th class="text-center">Supprimer</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for monProduit in mesProduits %}
+    <div class="row">
+        <div class="col-9" style="margin-left: 1.5em;">
+
+            {% if mesProduits | length > 0 %}
+            <table class="table table-bordered mx-auto" id="tableau-panier">
+                <thead>
+                    <tr>
+                        <th class="text-center">Produit</th>
+                        <th class="text-center">Prix</th>
+                        <th class="text-center">Quantité</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for monProduit in mesProduits %}
                     <tr>
                         <td class="text-center">{{ monProduit.produit.nom }}</td>
                         <td class="text-center">{{ monProduit.produit.prix }} €</td>
@@ -30,26 +32,29 @@
                             <a href="{{ path('panier_supression', {'id': monProduit.produit.id})}}"><i class="d-flex justify-content-center pt-1 fas fa-trash-alt" style="color:red;"></i></a>
                         </td>
                     </tr>
-                {% endfor %}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td style="text-align:center;">Total :</td>
-                    <td colspan="3" class="text-end">{{ total }} €</td>
-                    <td></td>
-                </tr>
-            </tfoot>
-        </table>
-    {% else %}
-        <div>
-            <p class="text-center">Vous n'avez aucun produit dans votre panier.</p>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="text-center">Total :</td>
+                        <td colspan="3" class="text-end">{{ total }} €</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-    {% endif %}
-
-    <a href="{{ path('paiement') }}" class="btn btn-success text-white" style="font-weight: bolder;">
-        Valider ma commande
-    </a>
-</div>
+            {% else %}
+            <div>
+                <p class="text-center">Vous n'avez aucun produit dans votre panier.</p>
+            </div>
+            {% endif %}
+            
+            <div class="col-9 mx-auto d-flex justify-content-center">
+                <a href="{{ path('paiement') }}" class="btn btn-success text-white fw-bolder">
+                    Valider ma commande
+                </a>
+            </div>
+        </div>
 
 
 

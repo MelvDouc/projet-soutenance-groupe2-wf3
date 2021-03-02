@@ -257,4 +257,8 @@ label[for='newsletter_email'] {
     .cards-container-3 {
         grid-template-columns: 1fr;
     }
+
+    #tableau-panier {
+        font-size: .85em;
+    }
 }
