@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement en ligne{% endblock %}
+
+{% block body %}
+
+<h2 class="text-center">Veuillez entrer les informations et valider pour effectuer votre achat</h2>
+
+<div class="col-6 mx-auto mb-5 p-3 contact-form-div">
+
+    {{ form_start(formulairePaiement) }}
+
+    
+    <h3 class="text-center pt-4">Informations générales</h3>
+                {{ form_label(formulairePaiement.nom) }}
+                {{ form_widget(formulairePaiement.nom) }}
+            
+            
+                {{ form_label(formulairePaiement.prenom) }}
+                {{ form_widget(formulairePaiement.prenom) }}
+            
+                {{form_label(formulairePaiement.email) }}
+                {{ form_widget(formulairePaiement.email) }}
+            
+                <h3 class="text-center pt-4">Informations pour la livraison</h3>      
+                {{ form_label(formulairePaiement.adresse) }}
+                {{ form_widget(formulairePaiement.adresse) }}
+            
+                {{form_label(formulairePaiement.codepostal) }}
+                {{ form_widget(formulairePaiement.codepostal) }}
+            
+                {{form_label(formulairePaiement.ville) }}
+                {{ form_widget(formulairePaiement.ville) }}
+            
+            
+                <h3 class="text-center pt-4">Informations de paiement</h3>
+                {{ form_label(formulairePaiement.numerodecarte) }}
+                {{ form_widget(formulairePaiement.numerodecarte) }}
+            
+            
+                {{ form_label(formulairePaiement.dateexpirationcarte) }}
+                {{ form_widget(formulairePaiement.dateexpirationcarte) }}
+            
+            
+                {{ form_label(formulairePaiement.codecvv) }}
+                {{ form_widget(formulairePaiement.codecvv) }}
+            
+
+                <div class="pt-4">
+                    {{ form_widget(formulairePaiement.Valider) }}
+                </div>
+
+{{ form_end(formulairePaiement) }}
+
+</div>
+{% endblock %}
