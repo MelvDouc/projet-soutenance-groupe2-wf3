@@ -26,7 +26,8 @@ class NewsletterController extends AbstractController
         $formulaireNewsletter = $this->createForm(NewsletterType::class);
         $formulaireNewsletter->handleRequest($request);
 
-        if ($formulaireNewsletter->isSubmitted() && $formulaireNewsletter->isValid()) {
+        if ($formulaireNewsletter->isSubmitted()) {
+            if($formulaireNewsletter->isValid()) {
             $newsletter->setEmail($formulaireNewsletter->get('email')->getData());
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($newsletter);
@@ -51,16 +52,20 @@ class NewsletterController extends AbstractController
             ;
             
             $mailer->send($mail);
-            
             $this->addFlash(
                 'success',
                 'Votre inscription a bien été prise en compte.'
             );
-            
-            
-            return $this->redirectToRoute('inscription_newsletter');   
+               
+        } else {
+            $this->addFlash(
+                'danger',
+                'Cette adresse email est déjà utilisée.'
+            );
         }
-
+            return $this->redirectToRoute('home');    
+        }
+        
         return $this->render('newsletter/newsletter.html.twig', [
             'formulaireNewsletter' => $formulaireNewsletter->createView(),
             'categories' => $categories,
