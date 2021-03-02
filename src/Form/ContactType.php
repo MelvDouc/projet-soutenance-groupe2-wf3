@@ -55,6 +55,7 @@ class ContactType extends AbstractType
                     'Je n\'ai pas reçu ma commande' => 'Je n\'ai pas reçu ma commande',
                     'Demande de remboursement' => 'Remboursement',
                     'Je souhaite postuler' => 'candidature',
+                    'Désinscription Newsletter' => 'Désinscription Newsletter',
                     'Autre' => 'Autre'
                 ],
                 'attr' => [
