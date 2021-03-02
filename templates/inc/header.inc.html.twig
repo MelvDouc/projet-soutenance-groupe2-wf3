@@ -26,18 +26,21 @@
         </div>
 
         <div id="icons">
+            <div class="border border-light p-3 rounded">
+                {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('app_logout') }}" title="Déconnexion">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+            {% else %}
+
             <a href="{{ path('app_login') }}" title="Connexion">
-                <i class="bi bi-box-arrow-in-right"></i>
+                <i class="fas fa-sign-in-alt"></i>
             </a>
-            <a href="" title="Mon compte">
-                <i class="bi bi-person"></i>
-            </a>
+            {% endif %}
             <a href="{{ path('panier') }}" title="Mon panier">
                 <i class="bi bi-bag"></i>
             </a>
-            <a href="{{ path('app_logout') }}" title="Déconnexion">
-                <i class="bi bi-box-arrow-left"></i>
-            </a>
+            </div>
         </div>
     </nav>
 </header>
