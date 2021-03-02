@@ -5,8 +5,8 @@
 {% block body %}
 
 <div class="wrapper">
-    <h1 class="text-center">Qui sommes-nous?</h1>
-    <h2 class="text-center">L'équipe:</h2>
+    <h1 class="text-center mb-5">Qui sommes-nous?</h1>
+    <h2 class="text-center">L'équipe</h2>
     <p  class="text-center">Nous sommes un groupe de quatre étudiants en développement web et web mobile à l'école WebForce3 de Strasbourg : François, Matthieu, Melvin et Wassim.</p>
     <div class="container-fluid content-row">
         <div class="row p-5">
@@ -29,10 +29,7 @@
                         </li>
                     </ul>
                     <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
-                        <a href="mailto:email@du.membre" class="btn text-white" style="font-weight: bolder;">
-                            <i class="fas fa-shopping-cart mr-1"></i>
-                            Contacter
-                        </a>
+                        <a href="mailto:email@du.membre" class="btn text-white" style="font-weight: bolder;">Contacter</a>
                     </div>
                 </div>
             </div> #}
@@ -59,10 +56,7 @@
                         </li>
                     </ul>
                     <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
-                        <a href="mailto:banitz.francois@gmail.com" class="btn text-white" style="font-weight: bolder;">
-                            <i class="fas fa-shopping-cart mr-1"></i>
-                            Contacter
-                        </a>
+                        <a href="mailto:banitz.francois@gmail.com" class="btn text-white" style="font-weight: bolder;">Contacter</a>
                     </div>
                 </div>
             </div>
@@ -90,20 +84,16 @@
                         </li>
                     </ul>
                     <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
-                        <a href="mailto:matthieu.scherer@me.com" class="btn text-white" style="font-weight: bolder;">
-                            <i class="fas fa-shopping-cart mr-1"></i>
-                            Contacter
-                        </a>
+                        <a href="mailto:matthieu.scherer@me.com" class="btn text-white" style="font-weight: bolder;">Contacter</a>
                     </div>
                 </div>
             </div>
 
             <div class="pb-5 col-sm-12 col-lg-6">
                 <div class="card h-100 ">
-                    <img src="{{ asset('img/equipe/') ~ 'Melvin.jpg' }}" alt="Nom Membre" class="card-img-top thumb-post" style="height: 450px;">
+                    <img src="{{ asset('img/equipe/') ~ 'Melvin.jpg' }}" alt="Melvin" class="card-img-top thumb-post" style="height: 450px;">
                     <div class="card-body">
                         <h2 class="card-title">Melvin DOUCET</h2>
-                        <p class="card-text overflow-auto">Description membre</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -119,10 +109,32 @@
                         </li>
                     </ul>
                     <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
-                        <a href="mailto:melv.douc@gmail.com" class="btn text-white" style="font-weight: bolder;">
-                            <i class="fas fa-shopping-cart mr-1"></i>
-                            Contacter
-                        </a>
+                        <a href="mailto:melv.douc@gmail.com" class="btn text-white" style="font-weight: bolder;">Contacter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-5 col-sm-12 col-lg-6">
+                <div class="card h-100">
+                    <img src="{{ asset('img/equipe/') ~ 'wassim.jpg' }}" alt="Wassim" class="card-img-top thumb-post" style="height: 450px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Wassim KASSEM</h2>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            Parties effectuées :
+                            <ul>
+                                <li>Carousel Bootstrap de la page d'accueil</li>
+                                <li>Recherches et réation des documents relatifs à la législation</li>
+                                <li>Partie du CSS global du site</li>
+                                <li>Mise en place des liens de la page d'accueil vers les catégories</li>
+                                <br>
+                                <br>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="card-body text-center bg-success text-center d-flex align-items-center justify-content-center" style="font-weight: bolder;">
+                        <a href="waskas23@gmail.com" class="btn text-white" style="font-weight: bolder;">Contacter</a>
                     </div>
                 </div>
             </div>
@@ -131,13 +143,13 @@
 
     <div class="container">
 
-        <h2 class="text-center mb-3">Le projet:</h2>
+        <h2 class="text-center mb-3">Le projet</h2>
         
         <p> Ce site à été créé en février 2021 dans le cadre d'un projet de fin de parcours à l'école <a href="https://www.wf3.fr/" target="_blank">Webforce 3</a> </p>
         <p>Dans le cadre de notre projet de soutenance, nous avons créé ce <strong>site de vente d'articles de sport</strong> spécialisé dans les sports de ballon tels que le football, le basketball, le volleyball et le handball. Le site permet de sélectionner de commander des produits rangés par catégories (sports) et sous-catégories (ballons, maillots, chaussures et accessoires) en les ajoutant à un panier avant de valider la commande. <br> Le site est entièrement configurable par le gérant du magasin.</p>
         <h3>Technologies</h3>
         
-        <p>Notre principal outil de création a été le framework PHP <strong>Symfony</strong> version 5 grâce auquel nous avons pu générer facilement des fonctionnalités diverses et variées telles que des formulaires d'inscription, de connexion et de contact ainsi que tout un espace réservé à l'administrateur pour la gestion des produits disponibles et et des comptes d'utilisateur.</p>
+        <p>Notre principal outil de création a été le framework PHP <strong>Symfony</strong> version 5 grâce auquel nous avons pu générer facilement des fonctionnalités diverses et variées telles que des formulaires d'inscription, de connexion et de contact ainsi que tout un espace réservé à l'administrateur pour la gestion des produits disponibles et des comptes d'utilisateur.</p>
         
         <p>Nous avons également eu recours à <strong>Git et Github</strong> afin de travailler sur un projet commun en partageant nos modifications individuelles.</p>
         

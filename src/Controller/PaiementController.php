@@ -26,7 +26,7 @@ class PaiementController extends AbstractController
         if ($formulairePaiement->isSubmitted() && $formulairePaiement->isValid()) {
             $paiement = $formulairePaiement->getData();
             $mail = (new \Swift_Message('WF-Sport - Validation de paiement'))
-                ->setFrom('contact.elibird@gmail.com')
+                ->setFrom('wfsport.contact@gmail.com')
                 ->setTo($paiement['email'])
                 ->setBody(
                     $this->renderView(

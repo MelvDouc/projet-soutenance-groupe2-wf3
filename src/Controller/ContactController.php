@@ -24,12 +24,13 @@ class ContactController extends AbstractController
         $formulaireContact->handleRequest($request);
 
         if ($formulaireContact->isSubmitted() && $formulaireContact->isValid()) {
+            if ($_FILES['contact']['tmp_name']['fichier'] != null) { 
             $contact = $formulaireContact->getData();
             
             $mail = (new \Swift_Message('Projet Sport - demande de contact'))
                 ->attach(\Swift_Attachment::fromPath($_FILES['contact']['tmp_name']['fichier'])->setFilename($_FILES['contact']['name']['fichier']))
                 ->setFrom($contact['email'])
-                ->setTo('contact.elibird@gmail.com')
+                ->setTo('wfsport.contact@gmail.com')
                 ->setBody(
                     $this->renderView(
                         'contact/emailContact.html.twig', [
@@ -42,8 +43,25 @@ class ContactController extends AbstractController
                         ],
                     ),
                     'text/html'
-                )
-            ;
+                );
+            } else {
+                $contact = $formulaireContact->getData();
+                $mail = (new \Swift_Message('Projet Sport - demande de contact'))
+                ->setFrom($contact['email'])
+                ->setTo('wfsport.contact@gmail.com')
+                ->setBody(
+                    $this->renderView(
+                        'contact/emailContact.html.twig', [
+                            'nom' => $contact['nom'],
+                            'prenom' => $contact['prenom'],
+                            'email' => $contact['email'],
+                            'motif' => $contact['motif'],
+                            'numerodecommande' => $contact['numerodecommande'],
+                            'description' => $contact['description'],
+                        ],
+                    ),
+                    'text/html'
+                );}
             $mailer->send($mail);
             $this->addFlash(
                 'success',
