@@ -57,17 +57,17 @@
     <div class="container-fluid" id="accueil-categories">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-uppercase text-center py-3 m-0 bg-gray1">sports</h2>
+                <h2 class="text-uppercase text-light text-center fw-orbitron bg-gradient bg-primary py-3 m-0">sports</h2>
             </div>
         </div>
 
         <div class="row">
             {% for categorie in categories %}
-                <div class="col-6">
+                <div class="col-6 mb-3">
                     <a href="{{ path('categories', {'cat': categorie.nom}) }}">
                         <img src="{{ asset('img/1-categories/') ~ categorie.img }}">
                     </a>
-                    <h3 class="text-center"> {{ categorie.nom }} </h3>
+                    <h3 class="text-center fw-orbitron"> {{ categorie.nom }} </h3>
                 </div>
             {% endfor %}  
 
@@ -75,7 +75,7 @@
     </div>
 
 </main>
-<a href="#" class="btn">
-    <p class="arrow">^</p> 
-</a>
+
+
+
 {% endblock %}

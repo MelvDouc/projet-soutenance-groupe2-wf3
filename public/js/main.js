@@ -1,11 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
-    const registrationFormPseudo = document.querySelector('#registration_form_pseudo'),
-        headerNavLinks = document.querySelectorAll('header nav .dropdown a'),
-        cardBodyTexts = document.querySelectorAll('p.card-text')
-
-    function getPropValue(elem, prop) {
-        return parseFloat(window.getComputedStyle(elem).getPropertyValue(prop));
-    }
+    const registrationFormPseudo = document.querySelector('#registration_form_pseudo');
 
     function generateRandomUsername() {
         let randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -20,25 +14,4 @@ window.addEventListener('DOMContentLoaded', function () {
         registrationFormPseudo.setAttribute('placeholder', 'Exemple : ' + generateRandomUsername());
     }
 
-    //
-
-    function setCategoryLinks() {
-        for (link of headerNavLinks) {
-            let cat = link.closest('ul').getAttribute('aria-labelledBy').split('-')[0];
-            link.href = `/produits/${cat}/${link.innerText.toLowerCase()}`
-        }
-    }
-
-    // setCategoryLinks();
-
-    //
-
-    function equalizeHeights(elems) {
-        let heights = [];
-        Object.values(elems).forEach(elem => heights.push(getPropValue(elem, 'height')));
-        Object.values(elems).forEach(elem => elem.style.height = Math.max(...heights) + 'px');
-    }
-
-    equalizeHeights(cardBodyTexts);
-    window.addEventListener('resize', equalizeHeights(cardBodyTexts));
 })
